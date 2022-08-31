@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
+
+</head>
+
+<body>
+    {{>pheader}}
+    {{>header}}
+    <section id="homecontact">
+    </section>
+<div class="cont">
+    <form action="/" method="post" id="contact">
+        <label for="type">
+            YOU ARE
+            <select name="type" id="type">
+                <option value="Uttar Pradesh">Importer</option>
+                <option value="Uttar Pradesh">Exporter</option>
+            </select>
+        </label>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="number" name="num" id="num" placeholder="Mobile Number (10 digits) *" required>
+        <input type="email" name="email" id="email" placeholder="Enter you mail id">
+
+        <input type="text" name="name" id="name" placeholder="Organisation">
+        <input type="text" name="name" id="name" placeholder="your message">
+        <input id="place" type="submit" value="SUBMIT">
+    </form>
+</div>
+     {{>foot1}}
+
+
+
+
+
+</body>
+
+</html>

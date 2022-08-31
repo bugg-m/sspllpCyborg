@@ -1,0 +1,670 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.handle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 24px;
+   
+    /* justify-content: space-around; */
+    /* text-align: center; */
+}
+
+.fa.fa{
+    
+    padding: 8px;
+}
+.handle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+     background-color: #06101c;
+     width: 100%;
+    height: 30px;
+    z-index: -1;
+    /* opacity: 0.8; */
+}
+.handle a{
+    color: white;
+    text-decoration: none;
+}
+.icon
+{
+    color: white;
+}
+/* navbar------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@200;700&family=Finlandica:ital@1&display=swap');
+
+p {
+    /* font-family: 'Arima', cursive; */
+    font-family: 'Finlandica', sans-serif;
+}
+
+h1 {
+    font-family: 'Arima', cursive;
+}
+
+
+
+
+
+#watch {
+    border: 2px solid red;
+    position: relative;
+    top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+
+#b1 {
+    font-size: 15px;
+    background: transparent;
+    border: 1px solid black;
+    color: white;
+}
+
+
+.navbar::before {
+    content: "";
+    background-color: #5584ff;
+    position: absolute;
+    
+    width: 100%;
+    height: 68px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* opacity: 0.8; */
+}
+
+.navbar ul {
+    position: absolute;
+    top: 30px;
+    display: flex;
+    /* padding: 10px; */
+    font-size: 12px;
+    color: rgb(9, 9, 9);
+    /* border: 2px solid red; */
+    right: 15px;
+}
+
+.navbar ul li {
+    list-style: none;
+    color: white;
+    padding: 8px;
+    position: relative;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    /* margin-bottom: 5px; */
+    margin-left: 30px;
+}
+
+.navbar ul a {
+    text-decoration: none;
+}
+
+.navbar li:hover {
+    color: greenyellow;
+    /* color: red; */
+}
+
+.navbar li::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(193, 206, 11);
+    /* background-color: rgb(235, 15, 15); */
+    width: 0px;
+    height: 2.5px;
+    transition: 0.5s;
+    left: 0px;
+    top: 32px;
+}
+
+.navbar li:hover::after {
+    width: 100%;
+}
+
+.navbar .menu-btn i {
+    font-size: 20px;
+    color: white;
+    /* display: none; */
+}
+
+#click {
+    display: none;
+}
+
+.hr {
+    display: none;
+}
+
+
+
+.menu-btn {
+    display: none;
+}
+
+p {
+    color: black;
+}
+
+.time {
+    color: white;
+
+}
+
+.count {
+    color: white;
+    position: relative;
+    left: 90px;
+}
+
+.main {
+    /* position: relative;
+     top: 50px; */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    z-index: -1;
+    overflow: auto;
+}
+
+.card {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px auto;
+    height: 350px;
+}
+
+/* .card 
+{   position: static;
+    z-index: -2;
+}
+.main .card video{
+    position: relative;
+    z-index: -2;
+} */
+
+
+footer {
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+
+.right1 img {
+    width: 15px;
+    /* filter: invert(); */
+
+}
+
+.right1 {
+    font-size: 15px;
+    color: white;
+}
+
+
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 338px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    background: url('../images/s2.jpg') no-repeat center center/cover;
+    /* background: rgb(2, 0, 36); */
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 47, 121, 1) 49%, rgba(0, 212, 255, 1) 100%); */
+    height: 400px;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+    animation: imgs 20s linear infinite;
+}
+
+@keyframes imgs {
+    0% {
+        background-image: url(../images/s2.jpg);
+    }
+
+    25% {
+        background-image: url(../images/s1.jpg);
+
+    }
+
+    50% {
+        background-image: url(../images/bg3.jpg);
+    }
+
+    75% {
+        background-image: url(../images/bg4.jpg);
+    }
+
+    100% {
+        background-image: url(../images/bg5.jpg);
+    }
+
+}
+
+#home h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Bree Serif', serif;
+}
+
+#home p {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Bree Serif', serif;
+}
+
+
+/* services ----------------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>> */
+#services-container
+{
+    /* background: #161623; */
+}
+#services {
+    margin: -3px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+
+#services .box {
+    /* border: 2px solid brown; */
+    padding: 20px;
+    margin: -1px 6px;
+    /* border-radius: 28px; */
+    /* background: #f2f2f2; */
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 259px;
+    height: 300px;
+}
+
+#services .box img {
+    width: 120px;
+
+    margin: auto;
+    display: block;
+}
+
+.box h2 {
+    margin-top: -20px;
+}
+
+
+#services .box p {
+    font-family: 'Bree Serif', serif;
+}
+
+
+/* utility class --------------------------------------------------------->>>>>>>>>>>>>>>>>>>>> */
+
+.h-primary {
+    font-family: 'Bree Serif', serif;
+    font-size: 45px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.h-secondary {
+    font-family: 'Bree Serif', serif;
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+/* .btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+} */
+
+.center {
+    text-align: center;
+}
+
+.buggg {
+    color: rgb(27 235 225 / 60%);
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-family: 'Bree Serif', serif;
+}
+
+.name1 {
+    text-align: center;
+    color: #f3f2eff7;
+    font-size: 1rem;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.name2 {
+    text-align: center;
+    color: #81dc1df7;
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+    margin-bottom: 5px;
+    margin-bottom: -14px;
+}
+
+
+
+
+.btn {
+    /* width: 130px; */
+    /* padding: 15px; */
+    /* text-align: center; */
+    /* border-radius: 25px; */
+    border: 2px solid #009688;
+    font-weight: bold;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+span {
+    background-color: #f90;
+    /* border: 2px solid #f90; */
+    box-shadow: 0 0 16px rgb(0 0 0 / 20%);
+    /* color: #232f3e; */
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    /* border-radius: 25px; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+
+
+/* * Clients Section * ------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+#client-section {
+    position: relative;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    /* background-color: rgb(17, 209, 75); */
+    background: url('img/fbfinal.jpg') no-repeat center center/cover;
+    /* background-color: #505fc8; */
+    background-image: linear-gradient(43deg, #020730 0%, #000000 36%);
+
+
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-item {
+    padding: 44px;
+}
+
+#clients img {
+    height: 142px;
+    margin-left: 12px;
+}
+
+
+/* new modifications  card2 --------------------------------------------------------------*/
+#services2 {
+    margin: -3px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#services2 .box2 {
+    /* border: 2px solid brown; */
+    padding: 20px;
+    margin: -1px 6px;
+    /* border-radius: 28px; */
+    /* background: #f2f2f2; */
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 200px;
+    height: 250px;
+}
+
+
+
+.box2 h2 {
+    margin-top: -20px;
+    color: blue;
+    font-size: 25px;
+}
+
+.box2 h3 {
+    margin-top: 3px;
+    text-align: center;
+    color: #f20d0d;
+    font-size: 30px;
+}
+
+
+#services2 .box2 p {
+    font-family: 'Bree Serif', serif;
+}
+
+#card2-container h1 {
+    text-align: center;
+    padding: 10px;
+    color: #081040;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Bree Serif', serif;
+
+}
+
+#what {
+    /* border: 2px solid red; */
+    margin-top: 55px;
+    width: 80%;
+    margin-left: 40px;
+
+
+
+}
+
+#what p {
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+
+}
+
+
+
+
+/* blog--------------------------------------------------------- */
+
+#blog {
+    margin: -3px 34px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+    flex-wrap: wrap;
+}
+
+#blog .box3 {
+    /* border: 2px solid brown; */
+    padding: 20px;
+    margin: -1px 6px;
+    /* border-radius: 28px; */
+    /* background: #f2f2f2; */
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    height: 250px;
+    flex-basis: 40%;
+}
+
+
+
+.box3 h2 {
+    margin-top: -20px;
+    color: blue;
+    font-size: 25px;
+}
+
+.box3 h3 {
+    margin-top: 3px;
+    text-align: center;
+    color: #f20d0d;
+    font-size: 30px;
+}
+
+
+#blog .box3 p {
+    font-family: 'Bree Serif', serif;
+}
+
+#blogsection h1 {
+    text-align: center;
+    padding: 10px;
+    color: #27a317;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Bree Serif', serif;
+
+}
+
+/* transparent---------------------------- */
+#blogsection{
+   
+    background: #161623;
+    
+   
+}
+#blogsection a{
+   
+   text-decoration: none;
+    
+   
+}
+
+
+
+.box3 {
+    position: relative;
+    /* width: 250px;
+    height: 400px; */
+    z-index: 1;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+ 
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    /* flex-direction: column;
+    padding: 10px;
+    text-align: center; */
+}
+
+.box3 img {
+    width: 230px;
+    height: 150px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box3 h2
+ {
+    z-index: 1;
+    color: #a11e8c;
+}
+.box3 p
+ {
+    z-index: 1;
+    color: white;
+    font-size: 18px;
+}
+
+.box3 a {
+    border: 2px solid white;
+    color: white;
+    background-color: rgb(20, 6, 127);
+    border-radius: 5px;
+    margin: 18px auto;
+    padding: 4px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+#services
+{
+    display: flex;
+}
+.offer
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #5584ff;
+    height: 150px;
+}
+.offer h1
+{
+    color: white;
+    font-size: 30px;
+}
+.formoffer input{
+    /* width: 100%; */
+    padding: 15px;
+    border-radius: 5px;
+}
+.formoffer input[type=submit]{
+    /* width: 100%; */
+    background-color: green;
+    color: white;
+}
