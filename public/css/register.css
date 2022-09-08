@@ -98,10 +98,10 @@ input[type=password],
 input[type=email],
 input[type=number] {
   width: 100%;
-  padding: 15px;
+  padding: 5px;
   margin: 5px 0 22px 0;
   /* display: inline-block; */
-  border: none;
+  /* border: none; */
   /* background: #f1f1f1; */
   border-bottom: 2px solid #2f35ff;
   color: white;
