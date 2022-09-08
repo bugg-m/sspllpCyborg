@@ -31,23 +31,30 @@
     {{>header}}
     <div class="container">
         <h1>Log In SRISRIPORT</h1>
+        <hr>
         <div class="box">
-            <i class="fa fa-envelope"></i>
-            <input type="email" name="email" id="email" placeholder="Enter your registered mail id">
+            <form action="/login" method="post">
+                <i class="fa fa-envelope"></i>
+                <label for="email"><b></b></label>
+                <input type="email" placeholder="Enter your Email" name="email" required>
         </div>
         <div class="box">
             <i class="fa fa-key"></i>
 
-            <input type="password" name="password" id="password" placeholder="Enter your password">
+            <label for="psw1"><b></b></label>
+            <input type="password" placeholder="Enter Password" name="psw1" required>
         </div>
-        <button type="button" class="btn"><span></span> Sign in</button>
-        {{!-- <a href="//fb.com">fb</a>
-        <a href="//google.com">google</a>
-        <a href="//yahoo.com">yahoo</a> --}}
+        {{!-- <label>
+            <input style="color:#ffffff" type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"><span style="color: #64ff02;"> Remember me</span>
+          </label> --}}
+
+          {{!-- <p style="color:#ffffff">By creating an account you agree to our <a href="#" style="color:#ffffff">Terms & Privacy</a>.</p> --}}
+        <button type="submit" class="btn"><span></span> Sign in</button>
+
+        </form>
+
+
     </div>
-    {{!-- {{>foot1}} --}}
-
-
 
     {{>foot1}}
 

@@ -59,7 +59,7 @@ app.post('/register', async (req, res) => {
         psw2: req.body.psw2,
       });
       const data = await reguser.save();
-      
+
 
       res.status(200).render("index");
       // alert("you have successfully registered for srisriport!!  login to continue");
@@ -75,16 +75,37 @@ app.post('/register', async (req, res) => {
   }
 
 });
+
 app.get('/login', (req, res) => {
   res.render("login");
 })
-// app.get('/about', (req, res) => {
-//   res.json([{id:1,name:"vivek"},
-//   {id:1,name:"vivek"},{id:1,name:"vivek"}])
+
+app.post('/login', async (req, res) => {
+  try {
+    const p1 = req.body.psw1;
+    const email = req.body.email;
+    const userData = await Register.findOne({ email: email });
+    if(p1===userData.psw1)
+    {
+      res.status(200).render("index");
+    }
+    else
+    {
+      res.status(400).send("invalid email or password!!");
+    }
+    
+  }
+  catch (err) {
+    res.status(401).send(err);
+  }
+});
+
+
+// app.get('/about/*', (req, res) => {
+//   res.status(404).render("404", { err: "about ka andar ka page not found" });
 // })
-app.get('/about/*', (req, res) => {
-  res.status(404).render("404", { err: "about ka andar ka page not found" });
-})
+
+
 app.get('*', (req, res) => {
   res.status(404).render("404", { err: "page not found" });
 })

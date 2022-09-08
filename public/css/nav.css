@@ -53,7 +53,13 @@ h1 {
 
 
 
-
+.logo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65px;
+    filter: invert();
+}
 
 #watch {
     border: 2px solid red;
@@ -74,7 +80,7 @@ h1 {
 
 .navbar::before {
     content: "";
-    background-color: #5584ff;
+    background-color: hsl(278deg 94% 25%);
     position: absolute;
     
     width: 100%;
@@ -90,7 +96,7 @@ h1 {
     top: 30px;
     display: flex;
     /* padding: 10px; */
-    font-size: 12px;
+    font-size: 15px;
     color: rgb(9, 9, 9);
     /* border: 2px solid red; */
     right: 15px;
@@ -151,9 +157,6 @@ h1 {
     display: none;
 }
 
-p {
-    color: black;
-}
 
 .time {
     color: white;
