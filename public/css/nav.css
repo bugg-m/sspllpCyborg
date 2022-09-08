@@ -55,10 +55,10 @@ h1 {
 
 .logo img{
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
-    width: 65px;
-    filter: invert();
+    width: 122px;
+    /* filter: invert(); */
 }
 
 #watch {
