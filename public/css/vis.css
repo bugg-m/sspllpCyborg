@@ -40,7 +40,7 @@
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     /* border: 2px solid greenyellow; */
     background: url("../images/pb4.jpg") no-repeat center center/cover;
     /* background: radial-gradient(shape size at position, start-color, ..., last-color) */
@@ -51,7 +51,7 @@
 .para
 {
     width: 50%;
-    color: #ff04c2;
+    color: #caff04;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
 }

@@ -23,62 +23,8 @@
     opacity: 0.9;
 
 }
-form::before
-{
-    content: "";
-    position: absolute;
 
-    background: rgb(2, 0, 36);
-
-
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 47, 121, 1) 49%, rgba(0, 212, 255, 1) 100%);
-  
-
-    height: 400px;
-    top: 431px;
-    left: 0px;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.8;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-h2,
-h3 {
-
-    font-family: 'Orbitron', sans-serif;
-
-}
-
-h4 {
-    font-family: 'Arima', cursive;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
-    font-family: 'Finlandica', sans-serif;
-
-
-}
-
-
-.cont form {
-    
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.cont input {
+/* .cont input {
     padding: 10px;
     margin-bottom: 5px;
     background: transparent;
@@ -144,6 +90,6 @@ input[type=submit] {
     /* width: 100%; */
     background-color: green;
     color: white;
-}
+} */
 
 
