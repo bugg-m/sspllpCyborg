@@ -87,7 +87,7 @@ app.post('/login', async (req, res) => {
     const userData = await Register.findOne({ email: email });
     if(p1===userData.psw1)
     {
-      res.status(200).render("index");
+      res.status(200).render("index",{name:userData.fname});
     }
     else
     {
