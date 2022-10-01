@@ -25,6 +25,9 @@ hbs.registerPartials(partPath);
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("/sell", (req, res) => {
+  res.render("sell");
+});
 app.get("/product", (req, res) => {
   res.render("product");
 });
