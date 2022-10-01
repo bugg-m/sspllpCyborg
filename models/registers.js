@@ -6,7 +6,7 @@ const registerSchema = new mongoose.Schema({
     {
         type: String,
         required: true,
-       
+
 
     },
     lname:
@@ -17,7 +17,7 @@ const registerSchema = new mongoose.Schema({
     {
         type: String,
         required: true,
-        unique: [true,"email id already present"]
+        unique: [true, "email id already present"]
         // validate(value)
         // {
         //     if(!validator.isEmail(value))
@@ -31,10 +31,10 @@ const registerSchema = new mongoose.Schema({
     {
         type: Number,
         required: true,
-        unique: [true,"email id already present"]
+        unique: [true, "email id already present"]
 
     },
-   
+
     psw1:
     {
         type: String,
@@ -56,7 +56,7 @@ const registerSchema = new mongoose.Schema({
 
 
 });
-const Register= new mongoose.model("Register",registerSchema);
-module.exports=Register;
+const Register = new mongoose.model("Register", registerSchema);
+module.exports = Register;
 
 

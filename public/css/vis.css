@@ -24,18 +24,18 @@
     opacity: 0.9;
 
 }
-.msg
-{
+
+.msg {
     margin-top: 25px;
     /* border: 2px solid red; */
 }
-.msg p
-{
+
+.msg p {
     font-size: x-large;
     /* color: white; */
 }
-.msg2
-{
+
+.msg2 {
     margin-top: 25px;
     padding: 20px;
     display: flex;
@@ -46,14 +46,12 @@
     /* background: radial-gradient(shape size at position, start-color, ..., last-color) */
     background-blend-mode: lighten;
     /* opacity: 0.8; */
-    
+
 }
-.para
-{
+
+.para {
     width: 50%;
     color: #caff04;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
 }
-
-

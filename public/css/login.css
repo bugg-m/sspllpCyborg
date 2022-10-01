@@ -11,8 +11,8 @@ body {
 
     opacity: 0.8;
 }
-::placeholder
-{
+
+::placeholder {
     color: white;
 }
 
@@ -20,6 +20,7 @@ body {
     content: "\f084";
     color: white;
 }
+
 .fa-envelope:before {
     content: "\f0e0";
     color: white;
@@ -40,10 +41,12 @@ body {
     /* opacity: 0.8; */
 
 }
-hr{
+
+hr {
     width: 90%;
     height: 3px;
 }
+
 .container h1 {
     font-size: 40px;
     /* border-bottom: 5px solid purple; */

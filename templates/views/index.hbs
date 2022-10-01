@@ -8,35 +8,32 @@
     <title>SRISRIPORT</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 
-   <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/footer.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
     {{>pheader}}
     {{>header}}
-    {{!-- partilas --}}
-    {{!-- <h1>home page of SRISRIPORT</h1> --}}
     <section id="home">
-
         <h1 class="h-primary">Welcome to SRISRIPORT</h1>
-        <!-- <p>SRISRIPORT is an ecommerce exports program that helps you take your business from India to the global markets. With 200 million paid Prime members and over 300 million customers globally, you can leverage srisriport's global scale across the 18 global marketplaces in 200+ countries and territories.</p> -->
-       <a id="regbtn" href="/register"><button type="text" class="btn"> <span></span>Register Now</button></a> 
+        <a id="regbtn" href="/reglog"><button type="text" class="btn"><span></span><h4 class="blink">Register Now</h4> </button></a>
     </section>
     <div id="what">
 
         <h1 class="h-primary">About SRISRIPORT</h1>
-        <p>SRISRIPORT is a next generation Export and Import Marketplace, where the industries do EXIM with ease through our services. We strongly believe in the potential of every business that with proper knowledge, timely support and strong network, anyone can achieve their fortune worldwide.
-Being a comprehensive service platform for foreign trade, SRISRIPORT is committed to tapping business opportunities for Indian suppliers and overseas buyers, and providing one-stop services for promoting the international trade between the two sides.
-SRISRIPORT is looked upon a as preferred organisation for companies, Manufacturers and people who are looking for international business expansion and Growth.
-</p>
+        <p>SRISRIPORT is a next generation Export and Import Marketplace, where the industries do EXIM with ease through
+            our services. We strongly believe in the potential of every business that with proper knowledge, timely
+            support and strong network, anyone can achieve their fortune worldwide.
+            Being a comprehensive service platform for foreign trade, SRISRIPORT is committed to tapping business
+            opportunities for Indian suppliers and overseas buyers, and providing one-stop services for promoting the
+            international trade between the two sides.
+            SRISRIPORT is looked upon a as preferred organisation for companies, Manufacturers and people who are
+            looking for international business expansion and Growth.
+        </p>
         <!-- <button type="text" class="btn"> <span></span>Register Now</button> -->
     </div>
     <section id="services-container">
@@ -48,7 +45,9 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <img id="imp" src="../images/imp.png" alt="">
                 <h2 class="h-secondary center">Import</h2>
                 <p class="center">
-                    Imports and exports are the components of international trade. If the value of a country's imports exceeds the value of its exports, the country has a negative balance of trade, also known as a trade deficit.
+                    Imports and exports are the components of international trade. If the value of a country's imports
+                    exceeds the value of its exports, the country has a negative balance of trade, also known as a trade
+                    deficit.
                 <p>
             </div>
             <div class="box">
@@ -56,7 +55,9 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <img src="../images/export.png" alt="">
                 <h2 class="h-secondary center">Export</h2>
                 <p class="center">
-                    Imports and exports are the components of international trade. If the value of a country's imports exceeds the value of its exports, the country has a negative balance of trade, also known as a trade deficit.</p>
+                    Imports and exports are the components of international trade. If the value of a country's imports
+                    exceeds the value of its exports, the country has a negative balance of trade, also known as a trade
+                    deficit.</p>
             </div>
             {{!-- <div class="box">
                 <img id="eco" src="../images/ecomm.png" alt="">
@@ -77,9 +78,10 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
 
                 <h2 class="h-secondary center">Revenue potential</h2>
                 <hr>
-                <h3 class="card2h"> 5 million</h3>
+                {{!-- <h3 class="card2h"> 5 million</h3> --}}
                 <p class="center">
-                    Exports with SRISRIPORT, helping entrepreneurs, manufactures and people around the World to export and import
+                    Exports with SRISRIPORT, helping entrepreneurs, manufactures and people around the World to export
+                    and import
                 <p>
             </div>
             <div class="box2">
@@ -88,15 +90,17 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <h2 class="h-secondary center">Get expert support in logistics & returns</h2>
                 <hr>
                 {{!-- <h3 class="card2h"> 1 million</h3> --}}
-                <p class="center">Warehousing, compliance, Shipping and payments - SRISRIPORT assists you in every step to help you run a successful export business.</p>
+                <p class="center">Warehousing, compliance, Shipping and payments - SRISRIPORT assists you in every step
+                    to help you run a successful export business.</p>
             </div>
             <div class="box2">
 
                 <h2 class="h-secondary center">Join 400+ growing businesses network</h2>
                 <hr>
-                <h3 class="card2h"> 400+</h3>
+                {{!-- <h3 class="card2h"> 400+</h3> --}}
                 <p class="center">
-                     Join the network of 400+ World Exporter/Importers across various product categories, who are successfully running their business with SRISRIPORT. </p>
+                    Join the network of 400+ World Exporter/Importers across various product categories, who are
+                    successfully running their business with SRISRIPORT. </p>
             </div>
             <div class="box2">
 
@@ -104,7 +108,8 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <hr>
                 {{!-- <h3 class="card2h"> 100+</h3> --}}
                 <p class="center">
-                    We are designed to facilitate registered members to place, accept, conclude, manage and fulfill orders for the provision of products and services online.</p>
+                    We are designed to facilitate registered members to place, accept, conclude, manage and fulfill
+                    orders for the provision of products and services online.</p>
             </div>
         </div>
         <hr>
@@ -123,7 +128,8 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <hr>
 
                 <p class="center">
-                   Understand the market opportunity for your export business and select the suitable international marketplaces where you want to sell.
+                    Understand the market opportunity for your export business and select the suitable international
+                    marketplaces where you want to sell.
                 <p>
             </div>
             <div class="box3">
@@ -133,7 +139,8 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <hr>
 
                 <p class="center">
-                  Register as an srisriport global seller and use srisriport's state-of-the-art logistics to make your product listing across marketplaces quick and easy to manage.</p>
+                    Register as an srisriport global seller and use srisriport's state-of-the-art logistics to make your
+                    product listing across marketplaces quick and easy to manage.</p>
             </div>
             <div class="box3">
 
@@ -141,7 +148,8 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <hr>
 
                 <p class="center">
-                   Use Fulfillment by srisriport (FBA) services for shipping your products to any part of the world. You can also choose other shipping methods.</p>
+                    Use Fulfillment By Srisriport (FBS) services for shipping your products to any part of the world.
+                    You can also choose other shipping methods.</p>
             </div>
             <div class="box3">
 
@@ -149,15 +157,13 @@ SRISRIPORT is looked upon a as preferred organisation for companies, Manufacture
                 <hr>
 
                 <p class="center">
-                   Get paid to your account on completion of sales. Focus on expanding your export business by utilizing srisriport’s international tools and services. </p>
+                    Get paid to your account on completion of sales. Focus on expanding your export business by
+                    utilizing srisriport’s international tools and services. </p>
             </div>
         </div>
         <hr>
     </section>
     {{>foot1}}
-
-
-
 </body>
 
 </html>

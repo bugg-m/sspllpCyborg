@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
 
 body {
- 
+
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 47, 121, 1) 49%, rgba(0, 212, 255, 1) 100%);
 
 
@@ -149,4 +149,3 @@ input[type=number] {
 
 
 }
-

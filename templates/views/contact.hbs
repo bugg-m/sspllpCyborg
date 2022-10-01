@@ -8,73 +8,61 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
-    {{!--
-    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script> --}}
-    <link rel="stylesheet" type="text/css" href="css/register.css">
-
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <style>
-        .footer-dark {
 
-            color: #f0f9ff;
-            background-color: transparent;
-            font-size: 18px;
-        }
-    </style>
 
 </head>
 
 <body>
-    {{>pheader}}
     {{>header}}
-    <section id="homecontact">
-    </section>
     <div class="container">
-        <h1>Contact SRISRIPORT</h1>
-        <p>Please fill in this form to contact us.</p>
-        <hr>
-        <div class="box">
-            <form action="/register" method="post">
-                <div class="container">
-
-                    <label for="fname"><b></b></label>
-                    <input type="text" placeholder="Enter your first name" name="fname" required>
-
-                    <label for="lname"><b></b></label>
-                    <input type="text" placeholder="Enter your last name" name="lname" required>
-
-                    <label for="email"><b></b></label>
-                    <input type="email" placeholder="Enter your Email" name="email" required>
-                    <label for="mobile"><b></b></label>
-                    <input type="number" placeholder="Enter mobile number" name="mobile" required>
-
-
-                    <label for="msg1"><b></b></label>
-                    <input type="text" placeholder="Enter your message" name="msg1" required>
-
-                    <label for="msg2"><b></b></label>
-                    <input type="text" placeholder="your feedback" name="msg2" required>
-
-                    {{!-- <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label> --}}
-
-                    <p>We will contact you soon <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-                    <div class="clearfix">
-
-                        <button class="btn" type="submit" class="signupbtn">Send</button>
-                    </div>
+        <div class="content">
+            <div class="left-side">
+                <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Address</div>
+                    <div class="text-one">2nd Floor, 105-M</div>
+                    <div class="text-two">Taranagari, Gorakhpur, Uttar Pradesh.</div>
                 </div>
-            </form>
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Phone</div>
+                    <div class="text-one">+91 6306 834 436</div>
+                    <div class="text-two">+91 7839 358 367</div>
+                </div>
+                <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">srisriportllp@gmail.com</div>
+                    <div class="text-two">krvivi28@gmail.com</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="topic-text">Send us a message</div>
+                <p>If you have any work from us or any types of quries related to import or export, you can send us a
+                    message from here. It's our pleasure to help you.</p>
+                <form action="/contactus" method="post">
+                    <div class="input-box">
+                        <input type="text" placeholder="Enter your name" name="name">
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Enter your email" name="email">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Enter your mobile number" name="mobile">
+                    </div>
+                    <div class="input-box message-box">
+                        <input type="text" placeholder="Write your message" name="query">
+                    </div>
+                    <button class="button" type="submit">Send Now</button>
+                </form>
+            </div>
         </div>
-
-        {{>foot1}}
-
+    </div>
+    {{>foot1}}
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.menu-btn
-{
+
+
+.menu-btn {
     display: block;
 }
 
@@ -18,17 +19,19 @@
     /* z-index: -1; */
     display: flex;
     flex-direction: column;
+    z-index: 10;
 
 
-    
+
 }
-.navbar
-{
+
+.navbar {
     /* border: 2px solid grey; */
     height: 30px;
     /* border-radius: 4px; */
 }
-.navbar ul li{
+
+.navbar ul li {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
@@ -43,52 +46,55 @@
     right: 25px;
     top: 37px;
 }
-#click:checked ~ .menu-btn i:before {
+
+#click:checked~.menu-btn i:before {
     position: relative;
     content: "\f00d";
     z-index: 5;
-    
- }
-#click:checked ~ ul {
+
+}
+
+#click:checked~ul {
     left: 0%;
-    
- }
-#click:checked ~ .hr {
+
+}
+
+#click:checked~.hr {
     display: block;
     position: relative;
     top: 13px;
-    
- }
- #watch, #searchbox
- {
+
+}
+
+#watch,
+#searchbox {
     font-size: 12px;
     margin-left: 20px;
- }
-.inp
-{
+}
+
+.inp {
     width: 100px;
 }
-#ss
-{
+
+#ss {
     width: 60px;
 }
-.navbar .menu-btn i
-{
+
+.navbar .menu-btn i {
     font-size: 28px;
 }
- 
-#services
-{
+
+#services {
     display: flex;
     flex-direction: column;
 }
-#services2
-{
+
+#services2 {
     display: flex;
     flex-direction: column;
 }
-#blog
-{
+
+#blog {
     display: flex;
     flex-direction: column;
 }
