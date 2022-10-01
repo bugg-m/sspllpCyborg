@@ -43,6 +43,9 @@ app.get("/blog", (req, res) => {
 app.get("/reglog", (req, res) => {
   res.render("reglog");
 });
+app.get("/ourteam", (req, res) => {
+  res.render("ourteam");
+});
 app.post("/register", async (req, res) => {
   try {
     const p1 = req.body.psw1;
