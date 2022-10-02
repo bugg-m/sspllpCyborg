@@ -25,6 +25,9 @@ hbs.registerPartials(partPath);
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("/exim", (req, res) => {
+  res.render("exim");
+});
 app.get("/sell", (req, res) => {
   res.render("sell");
 });
