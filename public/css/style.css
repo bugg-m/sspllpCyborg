@@ -1,3 +1,4 @@
+
 .main {
     /* position: relative;
      top: 50px; */
@@ -6,6 +7,15 @@
     padding: 5px;
     z-index: -1;
     overflow: auto;
+}
+#title
+{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 105px;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Baloo Bhaina 2', cursive;
 }
 
 .card {
@@ -18,7 +28,7 @@
 
 .blink {
     animation: blink 3s infinite;
-}
+} 
 
 @keyframes blink {
     0% {
@@ -26,15 +36,18 @@
     }
 
     50% {
-        color: green;
+        color: red;
+        
     }
 
     51% {
-        color: orange;
+        color: blueviolet;
+      
     }
 
     100% {
-        color: red;
+        color: white;
+        
     }
 }
 
@@ -66,7 +79,7 @@
 #home {
     display: flex;
     flex-direction: column;
-    padding: 3px 200px;
+    /* padding: 3px 200px; */
     height: 338px;
     justify-content: center;
     align-items: center;
@@ -75,7 +88,7 @@
 #home::before {
     content: "";
     position: absolute;
-    background: url('../images/s2.jpg') no-repeat center center/cover;
+    background: url('../images/exim1.jpg') no-repeat center center/cover;
     /* background: rgb(2, 0, 36); */
     /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 47, 121, 1) 49%, rgba(0, 212, 255, 1) 100%); */
     height: 400px;
@@ -214,7 +227,7 @@
 span {
     /* background-color: #f90; */
     box-shadow: 0 0 16px rgb(0 0 0 / 20%);
-    background: #009688;
+    background: #057b0d;
     /* background: hsl(278deg 94% 25%); */
     height: 100%;
     width: 0%;
@@ -227,7 +240,7 @@ span {
 
 .btn {
 
-    border: 2px solid hsl(278deg 94% 25%);
+    border: 2px solid green;
     font-weight: bold;
     background-color: transparent;
     color: white;

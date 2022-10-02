@@ -9,19 +9,26 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 
     <link rel="stylesheet" type="text/css" href="css/newnav.css">
-    {{!-- <link rel="stylesheet" type="text/css" href="css/nav.css"> --}}
+    {{!--
+    <link rel="stylesheet" type="text/css" href="css/nav.css"> --}}
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
+    <script src="/public/js/title.js"></script>
 </head>
+
 <body>
     {{!-- {{>pheader}} --}}
     {{>navbar}}
     <section id="home">
-        <h1 class="h-primary">Welcome to SRISRIPORT</h1>
-        <a id="regbtn" href="/reglog"><button type="text" class="btn"><span></span><h4 class="blink">Register Now</h4> </button></a>
+        <h4 class="world" id="title">WORLD'S FIRST EXPORT IMPORT MARKETPLACE</h4>
+
+        <a id="regbtn" href="/reglog"><button type="text" class="btn"><span></span>
+                <h4 class="blink">JOIN US NOW</h4>
+               
+            </button></a>
     </section>
     <div id="what">
 
@@ -165,6 +172,7 @@
         <hr>
     </section>
     {{>foot1}}
+
 </body>
 
 </html>
