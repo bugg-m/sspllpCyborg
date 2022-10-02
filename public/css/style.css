@@ -547,7 +547,7 @@ span {
 .container .card{
   position: relative;
   width: 270px;
-  height: 350px;
+  height: 360px;
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
@@ -598,7 +598,7 @@ span {
 
 .container .card .imgBx img{
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
   width: 150px;
