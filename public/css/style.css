@@ -26,7 +26,7 @@
     height: 350px;
 }
 
-.blink {
+/* .blink {
     animation: blink 3s infinite;
 } 
 
@@ -49,7 +49,7 @@
         color: white;
         
     }
-}
+} */
 
 /* .card 
 {   position: static;
@@ -227,7 +227,7 @@
 span {
     /* background-color: #f90; */
     box-shadow: 0 0 16px rgb(0 0 0 / 20%);
-    background: #057b0d;
+    background: #460e7fa8;
     /* background: hsl(278deg 94% 25%); */
     height: 100%;
     width: 0%;
@@ -240,7 +240,7 @@ span {
 
 .btn {
 
-    border: 2px solid green;
+    border: 3px solid #460e7fa8;
     font-weight: bold;
     background-color: transparent;
     color: white;
@@ -390,7 +390,7 @@ span {
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 100%;
-    height: 250px;
+    /* height: 250px; */
     flex-basis: 40%;
 }
 
@@ -412,12 +412,13 @@ span {
 
 #blog .box3 p {
     font-family: 'Bree Serif', serif;
+    color: black;
 }
 
 #blogsection h1 {
     text-align: center;
     padding: 10px;
-    color: #cc0000;
+    color: #181717;
     font-weight: bold;
     font-size: 35px;
     font-family: 'Bree Serif', serif;
@@ -427,7 +428,8 @@ span {
 /* transparent---------------------------- */
 #blogsection {
 
-    background: #111;;
+    background-color:aliceblue;
+    margin-top: 20px;
     
 
 }
@@ -454,6 +456,7 @@ span {
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
+    border-radius: 15px;
     /* flex-direction: column;
     padding: 10px;
     text-align: center; */
@@ -470,7 +473,7 @@ span {
 
 .box3 h2 {
     z-index: 1;
-    color: #459f0e;
+    color: #040b3b;
 }
 
 .box3 p {
@@ -724,3 +727,85 @@ span {
 background-color: #119911;
   
 }
+
+
+#vivi{
+    position: relative;
+    width: 270px;
+    height: 360px;
+    background: #19181a;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  #vivi:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+  }
+#vivi1{
+    position: relative;
+    width: 270px;
+    height: 360px;
+    background: #19181a;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  #vivi1:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+  }
+#vivi2{
+    position: relative;
+    width: 270px;
+    height: 360px;
+    background: #19181a;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  #vivi2:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+  }
+#vivi3{
+    position: relative;
+    width: 270px;
+    height: 360px;
+    background: #19181a;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  #vivi3:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+  }

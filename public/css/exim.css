@@ -11,7 +11,7 @@ body{
     display: flex;
     align-items: center;
     justify-content:center;
-    background: #9a9eaa;
+    /* background: #9a9eaa; */
     flex-direction: column;
     /* height: 120%; */
 }
@@ -22,7 +22,8 @@ body{
     border-radius: 6px;
     padding: 30px;
     margin: 0 15px;
-    background-color: #fff;
+    height: 90vh;
+    /* background-color: #fff; */
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 .container header{
@@ -169,4 +170,24 @@ form .buttons button , .backBtn{
     form .fields .input-field{
         width: 100%;
     }
+
+   
 }
+@media (max-width: 900px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+
+    .container{
+        position: relative;
+        width: 100%;
+        top: 70px;
+        border-radius: 6px;
+        padding: 30px;
+        margin: 0 15px;
+        height: 60vh;
+        /* background-color: #fff; */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+}
+

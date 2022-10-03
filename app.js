@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 app.get("/exim", (req, res) => {
-  res.render("exim");
+  res.render("client");
 });
 app.get("/sell", (req, res) => {
   res.render("sell");
@@ -76,6 +76,30 @@ app.post("/register", async (req, res) => {
     res.status(401).send(err);
   }
 });
+app.post("/clientregister", async (req, res) => {
+  try {
+    const p1 = req.body.psw1;
+    const p2 = req.body.psw2;
+    if (p1 === p2) {
+      const reguser = new Register({
+        fname: req.body.fname,
+        lname: req.body.lname,
+        email: req.body.email,
+        mobile: req.body.mobile,
+        psw1: req.body.psw1,
+        psw2: req.body.psw2,
+      });
+      const data = await reguser.save();
+
+      res.status(200).render("exim");
+      // alert("you have successfully registered for srisriport!!  login to continue");
+    } else {
+      res.send("password mismatch");
+    }
+  } catch (err) {
+    res.status(401).send(err);
+  }
+});
 app.post("/contactus", async (req, res) => {
   try {
     const queryofuser = new Qeries({
@@ -102,6 +126,20 @@ app.post("/login", async (req, res) => {
     const userData = await Register.findOne({ email: email });
     if (p1 === userData.psw1) {
       res.status(200).render("index", { name: userData.fname });
+    } else {
+      res.status(400).send("invalid email or password!!");
+    }
+  } catch (err) {
+    res.status(401).send(err);
+  }
+});
+app.post("/clientlogin", async (req, res) => {
+  try {
+    const p1 = req.body.psw1;
+    const email = req.body.email;
+    const userData = await Register.findOne({ email: email });
+    if (p1 === userData.psw1) {
+      res.status(200).render("exim");
     } else {
       res.status(400).send("invalid email or password!!");
     }
