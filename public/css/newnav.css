@@ -17,7 +17,7 @@ nav{
   width: 100%;
   height: 100%;
   height: 70px;
-  background: #4f1e8ab8;
+  background: #470695d6;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 99;
 }
@@ -81,7 +81,7 @@ nav .navbar .links li .sub-menu{
   top: 70px;
   left: 0;
   line-height: 40px;
-  background: #4f1e8ab8;
+  background: #470695d6;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 4px 4px;
   display: none;
@@ -103,9 +103,7 @@ nav .navbar .links li:hover .js-sub-menu{
 .navbar .links li .sub-menu .more-arrow{
   line-height: 40px;
 }
-.navbar .links li .htmlCss-more-sub-menu{
-  /* line-height: 40px; */
-}
+
 .navbar .links li .sub-menu .more-sub-menu{
   position: absolute;
   top: 0;
@@ -310,7 +308,7 @@ nav .navbar .links li .sub-menu li{
       
 }
 
-
+}
 @media (max-width:370px){
   nav .navbar .nav-links{
   max-width: 100%;
