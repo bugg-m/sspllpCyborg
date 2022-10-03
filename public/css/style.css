@@ -17,8 +17,14 @@ h4{
     text-align: center;
     font-size: 25px;
     margin-top: 105px;
-    font-family: 'Gemunu Libre', sans-serif;
+    
 }
+#howh1 {
+    margin-top: 5px;
+     text-align: center;
+     /* font-family: 'Bree Serif', serif; */
+     font-family: 'Gemunu Libre', sans-serif;
+ }
 
 .card {
     border: 1px solid grey;
@@ -131,6 +137,7 @@ h4{
     text-align: center;
     font-family: 'Bree Serif', serif;
 }
+
 
 #home p {
     color: white;

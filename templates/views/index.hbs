@@ -12,6 +12,7 @@
     {{!--
     <link rel="stylesheet" type="text/css" href="css/nav.css"> --}}
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/letstalk.css">
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -67,7 +68,7 @@
                         <h2>Import</h2>
                         <div class="color">
                             <p style="color: white;">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima.
+                                Imports and Export are the components of international trade.
                             </p>
                         </div>
                         <a href="/exim">Import Now</a>
@@ -83,7 +84,7 @@
                         <h2>Export</h2>
                         <div class="color">
                             <p style="color: white;">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt.
+                                Imports and Export are the components of international trade.
                             </p>
                         </div>
                         <a href="/exim">Export Now</a>
@@ -99,7 +100,7 @@
                         <h2>Marketplace</h2>
                         <div class="color">
                             <p style="color: white;">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt.
+                                Marketplace is the interpreter of supply and demand
                             </p>
                         </div>
                         <a href="/product">Explore Now</a>
@@ -146,7 +147,7 @@
                 </div>
             </div>
             <div class="container">
-                    {{!-- width: 260px; height: 340px; background: #232323; --}}
+                {{!-- width: 260px; height: 340px; background: #232323; --}}
                 <div id="vivi" class="card">
                     <div class="imgBx">
                         <img src="images/241.png" />
@@ -199,7 +200,62 @@
         {{!--
         <hr> --}}
     </section>
-    <section id="blogsection">
+    <div style="margin-top: 20px;" class="talk">
+        <div class="right-side">
+            <div class="topic-text"><h3>Let's Talk</h3></div>
+            <p>If you have any types of quries related to import or export, you can send us a
+                message from here. It's our pleasure to help you.</p>
+            <form action="/contactus" method="post">
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your name" name="name">
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Enter your email" name="email">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your mobile number" name="mobile">
+                </div>
+                <div class="input-box message-box">
+                    <input type="text" placeholder="Write your message" name="query">
+                </div>
+                <button class="button" type="submit">Send query</button>
+            </form>
+        </div>
+        {{!-- <h1>How to Import and Export with SRISRIPORT?</h1> --}}
+    </div>
+{{!-- start --}}
+<h1 id="howh1">How to Import and Export with SRISRIPORT?</h1>
+ <div class="row1-container">
+    
+    <div class="how box-down cyan">
+      <h2>1.Decide where & what to sell</h2>
+      <p>Understand the market opportunity for your export business and select the suitable international marketplaces where you want to sell</p>
+      <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+    </div>
+
+    <div class="how red">
+      <h2>2. Register & list your products</h2>
+      <p>Register as an srisriport global seller and use srisriport's state-of-the-art logistics to make your product listing across marketplaces quick and easy to manage.</p>
+      <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+    </div>
+
+    <div class="how box-down blue">
+      <h2>3. Deliver your products</h2>
+      <p>Use Fulfillment By Srisriport (FBS) services for shipping your products to any part of the world. You can also choose other shipping methods.</p>
+      <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+    </div>
+  </div>
+  <div class="row2-container">
+    <div class="how orange">
+      <h2>4. Get paid & grow your business</h2>
+      <p>Get paid to your account on completion of sales. Focus on expanding your export business by utilizing srisriport’s international tools and services</p>
+      <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
+    </div>
+  </div>
+
+{{!-- end --}}
+
+    {{!-- <section id="blogsection">
         <a href="/reglog">
             <h1>How to Import and Export with SRISRIPORT?</h1>
         </a>
@@ -247,7 +303,7 @@
             </div>
         </div>
         <hr>
-    </section>
+    </section> --}}
     {{>foot1}}
 
 </body>
