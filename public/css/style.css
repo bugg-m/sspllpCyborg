@@ -20,7 +20,7 @@ h4{
     
 }
 #howh1 {
-    margin-top: 5px;
+    margin-top: 40px;
      text-align: center;
      /* font-family: 'Bree Serif', serif; */
      font-family: 'Gemunu Libre', sans-serif;
@@ -192,8 +192,8 @@ h4{
 .h-primary {
     font-family: 'Bree Serif', serif;
     font-size: 45px;
-    padding: 12px;
-    margin-top: 10px;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .h-secondary {
@@ -233,7 +233,7 @@ h4{
 }
 
 
-span {
+#home span {
     /* background-color: #f90; */
     box-shadow: 0 0 16px rgb(0 0 0 / 20%);
     background: #460e7fa8;
@@ -313,11 +313,16 @@ span {
 
 
 /* new modifications  card2 --------------------------------------------------------------*/
+.container
+{
+    padding: 5px
+}
 #services2 {
-    margin: -3px 34px;
+    
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content:space-evenly;
+    width: 80%;
 }
 
 #services2 .box2 {
@@ -354,11 +359,12 @@ span {
 
 #card2-container h1 {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     color: #081040;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Bree Serif', serif;
+    font-family: 'Gemunu Libre', sans-serif;
 
 }
 
@@ -535,7 +541,15 @@ span {
     color: white;
 }
 
-
+#card2-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 20px */
+    margin-top: 50px
+}
 
 
 /* card css---------------------------------------------------------- */

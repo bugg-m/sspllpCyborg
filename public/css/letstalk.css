@@ -8,13 +8,13 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.talk .content {
+.talk .talkcont {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.talk .content .left-side {
+.talk .talkcont .left-side {
     width: 25%;
     height: 100%;
     display: flex;
@@ -25,7 +25,7 @@
     /* position: relative; */
 }
 
-.content .left-side::before {
+.talkcont .left-side::before {
     content: '';
     position: absolute;
     height: 70%;
@@ -36,34 +36,34 @@
     background: #afafb6;
 }
 
-.content .left-side .details {
+.talkcont .left-side .details {
     margin: 14px;
     text-align: center;
 }
 
-.content .left-side .details i {
+.talkcont .left-side .details i {
     font-size: 30px;
     color: #3e2093;
     margin-bottom: 10px;
 }
 
-.content .left-side .details .topic {
+.talkcont .left-side .details .topic {
     font-size: 18px;
     font-weight: 500;
 }
 
-.content .left-side .details .text-one,
-.content .left-side .details .text-two {
+.talkcont .left-side .details .text-one,
+.talkcont .left-side .details .text-two {
     font-size: 14px;
     color: #afafb6;
 }
 
-.talk .content .right-side {
+.talk .talkcont .right-side {
     width: 75%;
     margin-left: 75px;
 }
 
-.content .right-side .topic-text {
+.talkcont .right-side .topic-text {
     font-size: 23px;
     font-weight: 600;
     color: #3e2093;
@@ -123,7 +123,7 @@
         padding: 30px 40px 40px 35px;
     }
 
-    .talk .content .right-side {
+    .talk .talkcont .right-side {
         width: 75%;
         margin-left: 55px;
     }
@@ -135,11 +135,11 @@
         /* height: 100%; */
     }
 
-    .talk .content {
+    .talk .talkcont {
         flex-direction: column-reverse;
     }
 
-    .talk .content .left-side {
+    .talk .talkcont .left-side {
         width: 100%;
         flex-direction: row;
         margin-top: 40px;
@@ -147,11 +147,11 @@
         flex-wrap: wrap;
     }
 
-    .talk .content .left-side::before {
+    .talk .talkcont .left-side::before {
         display: none;
     }
 
-    .talk .content .right-side {
+    .talk .talkcont .right-side {
         width: 100%;
         margin-left: 0;
     }

@@ -166,22 +166,13 @@ form .buttons button , .backBtn{
     }
 }
 
-/* @media (max-width: 550px) {
+@media (max-width: 550px) {
     form .fields .input-field{
         width: 100%;
     }
-    .container{
-        position: relative;
-        width: 100%;
-        top: 70px;
-        border-radius: 6px;
-        padding: 30px;
-        margin: 0 15px;
-        height: 60vh;
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    } 
- }*/
+
+   
+}
 @media (max-width: 900px) {
     form .fields .input-field{
         width: 100%;
