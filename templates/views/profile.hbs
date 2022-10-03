@@ -15,18 +15,19 @@
     {{!-- {{>navbar}} --}}
   <div class="sidebar">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+      <i class='bx bx-user' ></i>
+      {{!-- <h2 style="color: green;">hey</h2> --}}
       <span class="logo_name">{{name}}</span>
     </div>
       <ul class="nav-links">
         <li>
           <a href="/" class="active">
-            <i class='bx bx-grid-alt' ></i>
+            <i class='bx bx-log-out'></i>
             <span class="links_name">Home</span>
           </a>
         </li>
         <li>
-          <a href="#" class="active">
+          <a href="#">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -105,7 +106,7 @@
       </div>
       <div class="profile-details">
         <a href="/profile"><img src="images/viv.jpeg" alt=""></a>
-        <span class="admin_name">Vivek Kumar</span>
+        <span class="admin_name">{{name}}</span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
