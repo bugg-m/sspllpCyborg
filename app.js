@@ -128,7 +128,7 @@ app.post("/login", async (req, res) => {
     const email = req.body.email;
     const userData = await Register.findOne({ email: email });
     if (p1 === userData.psw1) {
-      res.status(200).render("profile", { name: userData.fname });
+      res.status(200).render("profile", { name: userData.fname});
     } else {
       res.status(400).send("invalid email or password!!");
     }
