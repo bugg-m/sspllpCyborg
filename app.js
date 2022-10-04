@@ -11,6 +11,7 @@ const partPath = path.join(__dirname, "templates/partials");
 // const userRouter=require('./router/user');
 const Register = require("./models/registers");
 const Qeries = require("./models/contactus");
+const Eximreg = require("./models/eximreg");
 var encoder = new util.TextEncoder("utf-8");
 // const mongoose = require('mongoose');
 app.use(express.json());
@@ -75,6 +76,47 @@ app.post("/register", async (req, res) => {
     } else {
       res.send("password mismatch");
     }
+  } catch (err) {
+    res.status(401).send(err);
+  }
+});
+app.post("/eximreg", async (req, res) => {
+  try {
+   
+      const reguser = new Eximreg({
+        fname: req.body.fname,
+        email: req.body.email,
+        tradeRole: req.body.tradeRole,
+        dob: req.body.dob,
+        mobileNumber: req.body.mobileNumber,
+        country:req.body.country,
+        idType: req.body.idType,
+        idNumber: req.body.idNumber,
+        issuedAuthority: req.body.issuedAuthority,
+        issuedCountry: req.body.issuedCountry,
+        jobTitle: req.body.jobTitle,
+        companyName: req.body.companyName,
+        companyType: req.body.companyType,
+        address: req.body.address,
+        state: req.body.state,
+        city: req.body.city,
+        pincode: req.body.pincode,
+        companyNumber: req.body.companyNumber,
+        Landline: req.body.Landline,
+        gstNumber: req.body.gstNumber,
+        iecCode: req.body.iecCode,
+        currentAccount: req.body.currentAccount,
+        aoCode: req.body.aoCode,
+        letsTalk: req.body.letsTalk,
+        ifYes: req.body.ifYes,
+        alternateMobileNumber: req.body.alternateMobileNumber,
+        noIdont: req.body.noIdont,
+      });
+      const data = await reguser.save();
+
+      res.status(200).send(data);
+      // alert("you have successfully registered for srisriport!!  login to continue");
+    
   } catch (err) {
     res.status(401).send(err);
   }
