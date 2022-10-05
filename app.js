@@ -17,7 +17,10 @@ var multer = require('multer');
 const Register = require("./models/registers");
 const Qeries = require("./models/contactus");
 const Eximreg = require("./models/eximreg");
+<<<<<<< HEAD
 const Imgprofile = require("./models/profileimg");
+=======
+>>>>>>> 16f10a22374bdc96fd5b5662a38459a023651ccd
 var encoder = new util.TextEncoder("utf-8");
 const fs=require("fs");
 
@@ -137,6 +140,7 @@ app.post("/register", async (req, res) => {
     res.status(401).send(err);
   }
 });
+<<<<<<< HEAD
 
 
 // app.post('/upload', upload.single('image'), (req, res, next) => {
@@ -193,6 +197,8 @@ app.get('/test', (req, res) => {
 //   });
 // });
 
+=======
+>>>>>>> 16f10a22374bdc96fd5b5662a38459a023651ccd
 app.post("/eximreg", async (req, res) => {
   try {
 
