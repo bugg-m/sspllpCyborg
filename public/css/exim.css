@@ -244,10 +244,21 @@ form .buttons button,
 
 
 @media (max-width: 750px) {
+   .container form label
+   {
+    display: none;
+   }
+   .container
+   {
+    position: absolute;
+    width: 110%;
+    background-color: none !important;
+   }
 .container form {
     overflow-y: scroll;
+    position:absolute;
     height: 150%;
-    width: 100%;
+    width: 93%;
     background: transparent;
 }
 }
