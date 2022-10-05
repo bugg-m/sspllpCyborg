@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #eceffc;
+    background: #eceffc !important;
     flex-direction: column;
     height: 120%;
 }
@@ -240,4 +240,14 @@ form .buttons button,
         /* background-color: #fff; */
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
+}
+
+
+@media (max-width: 750px) {
+.container form {
+    overflow-y: scroll;
+    height: 150%;
+    width: 100%;
+    background: transparent;
+}
 }
