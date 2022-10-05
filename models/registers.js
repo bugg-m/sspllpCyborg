@@ -52,8 +52,8 @@ const registerSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
 
-    }
-
+    },
+  
 
 });
 const Register = new mongoose.model("Register", registerSchema);
