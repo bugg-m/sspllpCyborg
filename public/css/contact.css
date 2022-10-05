@@ -38,6 +38,7 @@ body::before {
 
 .container {
     margin-top: 120px;
+    margin-bottom: 70px;
     width: 85%;
     background: #fff;
     border-radius: 6px;

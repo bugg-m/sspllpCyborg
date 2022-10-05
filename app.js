@@ -48,7 +48,7 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 app.get("/blog", (req, res) => {
-  res.render("blog");
+  res.render("sell");
 });
 app.get("/reglog", (req, res) => {
   res.render("reglog");
@@ -82,41 +82,41 @@ app.post("/register", async (req, res) => {
 });
 app.post("/eximreg", async (req, res) => {
   try {
-   
-      const reguser = new Eximreg({
-        fname: req.body.fname,
-        email: req.body.email,
-        tradeRole: req.body.tradeRole,
-        dob: req.body.dob,
-        mobileNumber: req.body.mobileNumber,
-        country:req.body.country,
-        idType: req.body.idType,
-        idNumber: req.body.idNumber,
-        issuedAuthority: req.body.issuedAuthority,
-        issuedCountry: req.body.issuedCountry,
-        jobTitle: req.body.jobTitle,
-        companyName: req.body.companyName,
-        companyType: req.body.companyType,
-        address: req.body.address,
-        state: req.body.state,
-        city: req.body.city,
-        pincode: req.body.pincode,
-        companyNumber: req.body.companyNumber,
-        Landline: req.body.Landline,
-        gstNumber: req.body.gstNumber,
-        iecCode: req.body.iecCode,
-        currentAccount: req.body.currentAccount,
-        aoCode: req.body.aoCode,
-        letsTalk: req.body.letsTalk,
-        ifYes: req.body.ifYes,
-        alternateMobileNumber: req.body.alternateMobileNumber,
-        noIdont: req.body.noIdont,
-      });
-      const data = await reguser.save();
 
-      res.status(200).send(data);
-      // alert("you have successfully registered for srisriport!!  login to continue");
-    
+    const reguser = new Eximreg({
+      fname: req.body.fname,
+      email: req.body.email,
+      tradeRole: req.body.tradeRole,
+      dob: req.body.dob,
+      mobileNumber: req.body.mobileNumber,
+      country: req.body.country,
+      idType: req.body.idType,
+      idNumber: req.body.idNumber,
+      issuedAuthority: req.body.issuedAuthority,
+      issuedCountry: req.body.issuedCountry,
+      jobTitle: req.body.jobTitle,
+      companyName: req.body.companyName,
+      companyType: req.body.companyType,
+      address: req.body.address,
+      state: req.body.state,
+      city: req.body.city,
+      pincode: req.body.pincode,
+      companyNumber: req.body.companyNumber,
+      Landline: req.body.Landline,
+      gstNumber: req.body.gstNumber,
+      iecCode: req.body.iecCode,
+      currentAccount: req.body.currentAccount,
+      aoCode: req.body.aoCode,
+      letsTalk: req.body.letsTalk,
+      ifYes: req.body.ifYes,
+      alternateMobileNumber: req.body.alternateMobileNumber,
+      noIdont: req.body.noIdont,
+    });
+    const data = await reguser.save();
+
+    res.status(200).render("succes", { role: data.tradeRole });
+    // alert("you have successfully registered for srisriport!!  login to continue");
+
   } catch (err) {
     res.status(401).send(err);
   }
@@ -170,7 +170,7 @@ app.post("/login", async (req, res) => {
     const email = req.body.email;
     const userData = await Register.findOne({ email: email });
     if (p1 === userData.psw1) {
-      res.status(200).render("profile", { name: userData.fname});
+      res.status(200).render("profile", { name: userData.fname });
     } else {
       res.status(400).send("invalid email or password!!");
     }

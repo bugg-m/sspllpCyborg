@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <!-- Designed by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-   <!--<title> Responsive Animated Product Card | CodingLab </title>-->
-    
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="css/newnav.css">
-    <link rel="stylesheet" type="text/css" href="css/product.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
-   </head>
+<head>
+  <meta charset="UTF-8">
+  <!--<title> Responsive Animated Product Card | CodingLab </title>-->
+
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
+  <title>Products - SriSriPort</title>
+  <link rel="stylesheet" type="text/css" href="css/newnav.css">
+  <link rel="stylesheet" type="text/css" href="css/product.css">
+  <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
+</head>
+
 <body>
-     {{>navbar}}
+  {{>navbar}}
   <div class="product-card">
     <div class="logo-cart">
       <img src="images/logo.jpg" alt="logo">
       <i class='bx bx-shopping-bag'></i>
     </div>
     <div class="main-images">
-     <img id="blue" class="blue active" src="/images/shoe.png" alt="blue">
+      <img id="blue" class="blue active" src="/images/shoe.png" alt="blue">
       <img id="pink" class="pink" src="/images/shoe2.png" alt="blue">
       <img id="yellow" class="yellow" src="/images/shoe3.png" alt="blue">
     </div>
@@ -33,18 +35,18 @@
       <span class="shoe_name">ADDIDAS GAZE ZX</span>
       <p>Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!</p>
       <div class="stars">
-        <i class='bx bxs-star' ></i>
-        <i class='bx bxs-star' ></i>
-        <i class='bx bxs-star' ></i>
-        <i class='bx bxs-star' ></i>
-        <i class='bx bx-star' ></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bx-star'></i>
       </div>
     </div>
     <div class="color-price">
       <div class="color-option">
         <span class="color">Colour:</span>
         <div class="circles">
-          <span class="circle blue active"  id="blue"></span>
+          <span class="circle blue active" id="blue"></span>
           <span class="circle pink " id="pink"></span>
           <span class="circle yellow " id="yellow"></span>
         </div>
@@ -59,30 +61,31 @@
       <button>Add To Cart</button>
     </div>
   </div>
-   <form action="/eximreg" method="post">
+  <form action="/eximreg" method="post">
     <input type="text" name="name" id="" placeholder="name">
     <input type="email" name="email" id="" placeholder="email">
     <input type="text" name="mobile" id="" placeholder="mobile">
     choose country:<select name="country" id="">
-        <option value="india">india</option>
-        <option value="usa">usa</option>
-        <option value="china">china</option>
+      <option value="india">india</option>
+      <option value="usa">usa</option>
+      <option value="china">china</option>
     </select>
     <button type="submit">submit</button>
-    </form>
+  </form>
   <script>
-   let circle = document.querySelector(".color-option");
+    let circle = document.querySelector(".color-option");
 
-   circle.addEventListener("click", (e)=>{
-     let target = e.target;
-     if(target.classList.contains("circle")){
-       circle.querySelector(".active").classList.remove("active");
-       target.classList.add("active");
-       document.querySelector(".main-images .active").classList.remove("active");
-       document.querySelector(`.main-images .${target.id}`).classList.add("active");
-     }
-   });
+    circle.addEventListener("click", (e) => {
+      let target = e.target;
+      if (target.classList.contains("circle")) {
+        circle.querySelector(".active").classList.remove("active");
+        target.classList.add("active");
+        document.querySelector(".main-images .active").classList.remove("active");
+        document.querySelector(`.main-images .${target.id}`).classList.add("active");
+      }
+    });
   </script>
-   {{!-- {{>foot1}} --}}
+  {{!-- {{>foot1}} --}}
 </body>
+
 </html>
