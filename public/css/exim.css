@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #9a9eaa;
+    background: #eceffc;
     flex-direction: column;
     height: 120%;
 }
@@ -51,6 +51,7 @@ body {
 
 .container form {
     display: flex;
+    justify-content: center;
     position: relative;
     margin-top: 16px;
     min-height: 100%;
@@ -118,11 +119,25 @@ select {
     font-weight: 400;
     color: #333;
     border-radius: 5px;
-    border: 1px solid #aaa;
+    border: 1px solid #6d14d6;
     padding: 0 15px;
     height: 42px;
     margin: 8px 0;
 }
+
+.input-field input,
+input,
+select {
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field input:focus,
+input:hover,
+select:hover {
+    box-shadow: 0 0 2px 2px #38d5fc;
+    border: 2px solid #3f0482;
+}
+
 
 .input-field input :focus,
 .input-field select:focus {
@@ -146,7 +161,8 @@ select {
     height: 45px;
     max-width: 200px;
     width: 100%;
-    border: none;
+    /* border: none; */
+    border: 1.5px solid black;
     outline: none;
     color: #fff;
     border-radius: 5px;
@@ -161,9 +177,11 @@ select {
     font-weight: 400;
 }
 
-form button:hover {
-    background-color: #265df2;
-}
+/* form button:hover,
+form .backBtn:hover {
+    box-shadow: 0 0 2px 2px #38d5fc;
+    border: 2px solid #3f0482;
+} */
 
 form button i,
 form .backBtn i {
