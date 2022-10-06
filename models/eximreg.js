@@ -58,13 +58,6 @@ const eximregSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-
-    date:
-    {
-        type: Date,
-        default: Date.now
-
-    },
     companyName:
     {
         type:String,
@@ -132,8 +125,12 @@ const eximregSchema = new mongoose.Schema({
     {
         type:String,
     },
-   
+    date:
+    {
+        type: Date,
+        default: Date.now
 
+    }
 });
 const Eximreg = new mongoose.model("Eximreg", eximregSchema);
 module.exports = Eximreg;
