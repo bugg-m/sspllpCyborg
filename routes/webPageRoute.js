@@ -6,6 +6,11 @@ routerWeb.get("/", (req, res) => {
   res.render("index");
 });
 
+// Get request for dev test
+routerWeb.get("/testpage", (req, res) => {
+  res.render("test");
+});
+
 routerWeb.get("/profile", (req, res) => {
   res.render("profile");
 });
