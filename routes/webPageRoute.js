@@ -33,7 +33,7 @@ routerWeb.get("/register", (req, res) => {
   res.render("register");
 });
 routerWeb.get("/blog", (req, res) => {
-  res.render("sell");
+  res.render("blog");
 });
 routerWeb.get("/reglog", (req, res) => {
   res.render("reglog");
