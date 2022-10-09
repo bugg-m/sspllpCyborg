@@ -4,7 +4,8 @@ require("./db/db");
 const path = require("path");
 const app = express();
 const hbs = require("hbs");
-const port = process.env.PORT || 8000;
+// const port = process.env.PORT || 3000;
+const port=3000;
 
 // Path set static and temp eng
 const staticPath = path.join(__dirname, "public");
