@@ -6,6 +6,11 @@ routerWeb.get("/", (req, res) => {
   res.render("index");
 });
 
+// Get request for dev test
+routerWeb.get("/testpage", (req, res) => {
+  res.render("test");
+});
+
 routerWeb.get("/profile", (req, res) => {
   res.render("profile");
 });
@@ -16,7 +21,7 @@ routerWeb.get("/sell", (req, res) => {
   res.render("sell");
 });
 routerWeb.get("/product", (req, res) => {
-  res.render("product");
+  res.render("product1");
 });
 routerWeb.get("/vision", (req, res) => {
   res.render("vision");
@@ -28,7 +33,7 @@ routerWeb.get("/register", (req, res) => {
   res.render("register");
 });
 routerWeb.get("/blog", (req, res) => {
-  res.render("sell");
+  res.render("blog");
 });
 routerWeb.get("/reglog", (req, res) => {
   res.render("reglog");
