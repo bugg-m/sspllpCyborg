@@ -1,6 +1,10 @@
 /* import fonts from google fonts */
 @import url("https://fonts.googleapis.com/css?family=Anton|Gugi|Lato|Roboto|Sofia&display=swap");
-
+body
+{
+  display: flex;
+  flex-direction: column;
+}
 :root {
   --light-gray: #2b3032a1;
   --primary-color: orange;
