@@ -8,7 +8,7 @@ routerWeb.get("/", (req, res) => {
 
 // Get request for dev test
 routerWeb.get("/testpage", (req, res) => {
-  res.render("test");
+  res.render("plist");
 });
 
 routerWeb.get("/profile", (req, res) => {
