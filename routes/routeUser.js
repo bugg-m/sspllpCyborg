@@ -93,11 +93,16 @@ router.post("/contactus", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
+    
     const p1 = req.body.psw1;
     const email = req.body.email;
     const userData = await Register.findOne({ email: email });
+    // const userimgData = await Imgprofile.findOne({ email: email });
+  
     if (p1 === userData.psw1) {
-      res.status(200).render("profile", { name: userData.fname });
+      res.status(200).render("profile", { name: userData.fname});
+      // res.status(200).render("profile", { name: userData.fname, image: userimgData.img });
+      // res.send(userimgData.img);
     } else {
       res.status(400).send("invalid email or password!!");
     }
@@ -105,7 +110,6 @@ router.post("/login", async (req, res) => {
     res.status(401).send(err);
   }
 });
-
 
 router.post("/clientlogin", async (req, res) => {
   try {
@@ -121,10 +125,6 @@ router.post("/clientlogin", async (req, res) => {
     res.status(401).send(err);
   }
 });
-
-
-
-
 
 // image uploader multer
 const fileFilter = (req, file, cb) => {
@@ -155,18 +155,18 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-
-router.post("/upload", upload.single('avatar'),async (req, res) => {
+router.post("/upload", upload.single("avatar"), async (req, res) => {
   try {
-    var email = req.body.email;
-    var img=req.file.path;
-    const userData = await new Imgprofile({
-      email:email,
-      img:img
-    });
-    const data=userData.save();
-    res.render("test",{image: userData.img});
     
+    var email = req.body.email;
+    var img = req.file.filename;
+    const usertextData = await Register.findOne({ email: email });
+    const userData = await new Imgprofile({
+      email: email,
+      img: img,
+    });
+    const data = userData.save();
+    res.render("profile", { image: userData.img,name: usertextData.fname });
 
     // res.status(200).render("test", { image: userData.email });
   } catch (err) {
@@ -174,19 +174,16 @@ router.post("/upload", upload.single('avatar'),async (req, res) => {
   }
 });
 
-
 router.post("/getimg", async (req, res) => {
   try {
     const email = req.body.email;
     const userData = await Imgprofile.findOne({ email: email });
-    console.log(userData.img);
+    // console.log(userData.img);
 
     res.status(200).render("test", { image: userData.img });
   } catch (err) {
     res.status(401).send(err);
   }
 });
-
-
 
 module.exports = router;
