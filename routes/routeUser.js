@@ -21,7 +21,7 @@ router.post("/register", async (req, res) => {
       });
       const data = await reguser.save();
 
-      res.status(200).render("index");
+      res.status(200).render("succes",{role:"Import/Export"});
       // alert("you have successfully registered for srisriport!!  login to continue");
     } else {
       res.send("password mismatch");
