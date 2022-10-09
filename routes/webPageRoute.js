@@ -5,10 +5,13 @@ const routerWeb = new express.Router();
 routerWeb.get("/", (req, res) => {
   res.render("index");
 });
+routerWeb.get("/productlist", (req, res) => {
+  res.render("productlist");
+});
 
 // Get request for dev test
 routerWeb.get("/testpage", (req, res) => {
-  res.render("test");
+  res.render("productlist");
 });
 routerWeb.get("/importlogin", (req, res) => {
   res.render("importlogin");
@@ -24,7 +27,7 @@ routerWeb.get("/sell", (req, res) => {
   res.render("sell");
 });
 routerWeb.get("/product", (req, res) => {
-  res.render("product1");
+  res.render("marketplace");
 });
 routerWeb.get("/vision", (req, res) => {
   res.render("vision");
