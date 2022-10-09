@@ -9,10 +9,10 @@ var multer = require("multer");
 
 router.post("/importclient", async (req, res) => {
   try {
-    const impdata = new (req.body);
-    const data = await Importuser.save();
+    const impdata = new Importuser(req.body);
+    const data = await impdata.save();
 
-    res.status(200).render("product");
+    res.status(200).render("marketplace");
     // alert("you have successfully registered for srisriport!!  login to continue");
   } catch (err) {
     res.status(401).send(err);
