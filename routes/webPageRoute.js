@@ -10,6 +10,9 @@ routerWeb.get("/", (req, res) => {
 routerWeb.get("/testpage", (req, res) => {
   res.render("plist");
 });
+routerWeb.get("/importlogin", (req, res) => {
+  res.render("importlogin");
+});
 
 routerWeb.get("/profile", (req, res) => {
   res.render("profile");
