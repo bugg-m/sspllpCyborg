@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+    {{>navbar}}
     <form class="form" action="/importclient" method="post" id="login">
         <h1 class="form__heading">Welcome</h1>
         <div class="form__group">
@@ -51,10 +51,11 @@
                 <option value="Unit">Unit</option>
             </select>
         </div>
-        <button class="btn btn--large btn--green" form_id="login" type="submit" formaction="#" disabled>
+        <button class="btn btn--large btn--green" form_id="login" type="submit">
             Next
             <ion-icon class="btn__icon" name="arrow-forward-outline"></ion-icon>
         </button>
+
     </form>
 
 </body>

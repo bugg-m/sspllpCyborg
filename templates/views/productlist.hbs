@@ -61,7 +61,7 @@
             </div> -->
         </div>
         <div class="form-outer">
-            <form action="#">
+            <form action="/productlist" method="post">
                 <div class="page slide-page">
                     <div class="title">Basic Info:</div>
                     <div class="field">
@@ -142,7 +142,7 @@
                     </div>
                     <div class="field">
                         <div class="label">Size/Dimensions</div>
-                        <input type="text" name="size/dimensions" required/>
+                        <input type="text" name="size/dimensions" required />
                     </div>
                     <div class="field">
                         <div class="label">Material</div>
@@ -194,7 +194,7 @@
                     </div>
                     <div class="field btns">
                         <button class="prev-5 prev">Previous</button>
-                        <button class="submit">Submit</button>
+                        <button type="submit">Submit</button>
                     </div>
                     <!-- <div class="field btns">
                         <button class="prev-2 prev">Previous</button>
@@ -318,10 +318,6 @@
                 progressCheck[current - 1].classList.add("active");
                 progressText[current - 1].classList.add("active");
                 current += 1;
-                setTimeout(function () {
-                    alert("Your Form Successfully Signed up");
-                    location.reload();
-                }, 800);
             });
 
             function validateInputs(ths) {
