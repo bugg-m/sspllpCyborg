@@ -101,6 +101,9 @@ router.post("/contactus", async (req, res) => {
     res.status(401).send(err);
   }
 });
+router.post("/productlist", (req, res) => {
+  res.redirect("/");
+});
 
 // router.get("/login", (req, res) => {
 //   res.render("profile");
@@ -108,14 +111,14 @@ router.post("/contactus", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    
+
     const p1 = req.body.psw1;
     const email = req.body.email;
     const userData = await Register.findOne({ email: email });
     // const userimgData = await Imgprofile.findOne({ email: email });
-  
+
     if (p1 === userData.psw1) {
-      res.status(200).render("profile", { name: userData.fname});
+      res.status(200).render("profile", { name: userData.fname });
       // res.status(200).render("profile", { name: userData.fname, image: userimgData.img });
       // res.send(userimgData.img);
     } else {
@@ -188,7 +191,7 @@ const upload = multer({
 
 router.post("/upload", upload.single("avatar"), async (req, res) => {
   try {
-    
+
     var email = req.body.email;
     var img = req.file.filename;
     const usertextData = await Register.findOne({ email: email });
@@ -197,7 +200,7 @@ router.post("/upload", upload.single("avatar"), async (req, res) => {
       img: img,
     });
     const data = userData.save();
-    res.render("profile", { image: userData.img,name: usertextData.fname });
+    res.render("profile", { image: userData.img, name: usertextData.fname });
 
     // res.status(200).render("test", { image: userData.email });
   } catch (err) {
