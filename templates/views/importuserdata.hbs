@@ -21,13 +21,13 @@
     <form class="form" action="/importclient" method="post" id="login">
         <h1 class="form__heading">Welcome</h1>
         <div class="form__group">
-            <input type="text" name="importcat" class="form__input" placeholder="What do you want to Import">
+            <input type="text" name="importcat" class="form__input" placeholder="What do you want to Import" required>
             <label class="form__label">What do you want to Import</label>
         </div>
         <div class="form__group" id="unit__group">
             <!-- <input type="text" name="" class="form__input" placeholder="From where do you want to Import"> -->
             <label id="unit__label">From where do you want to Import</label>
-            <select name="importreg" class="unit__input">
+            <select name="importreg" class="unit__input" required>
                 <option value="" disabled selected>Choose region</option>
                 <option value="Asia Pacific">Asia Pacific</option>
                 <option value="Africa">Africa</option>
@@ -42,9 +42,10 @@
             </select>
         </div>
         <div class="form__group" id="unit__group">
-            <input type="number" name="howmuch" class="form__input" placeholder="How much do you want to Import">
+            <input type="number" name="howmuch" class="form__input" placeholder="How much do you want to Import"
+                required>
             <label class="form__label">How much do you want to Import</label>
-            <select name="impunit" class="unit__input">
+            <select name="impunit" class="unit__input" required>
                 <option value="" disabled selected>Choose type</option>
                 <option value="cbm">CBM</option>
                 <option value="Container">Container</option>
