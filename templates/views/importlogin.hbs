@@ -8,84 +8,98 @@
     <title>Import Verification - SriSriPort</title>
     <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/importlogin.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
 </head>
 
 <body>
-    <!--
-      This was created based on the Dribble shot by Deepak Yadav that you can find at https://goo.gl/XRALsw
-      I'm @hk95 on GitHub. Feel free to message me anytime.
-    -->
+
     {{>navbar}}
-    <section class="user">
-        <div class="user_options-container">
-            <div class="user_options-text">
-                <div class="user_options-unregistered">
-                    <h2 class="user_unregistered-title">Don't have an account?</h2>
-                    <p class="user_unregistered-text">Start your journey with SriSriPort!</p>
-                    <button class="user_unregistered-signup" id="signup-button">Sign up</button>
-                </div>
 
-                <div class="user_options-registered">
-                    <h2 class="user_registered-title">Have an account?</h2>
-                    <p class="user_registered-text">Start your journey with SriSriPort!</p>
-                    <button class="user_registered-login" id="login-button">Login</button>
-                </div>
-            </div>
 
-            <div class="user_options-forms" id="user_options-forms">
-                <div class="user_forms-login">
-                    <h2 class="forms_title">Login</h2>
-                    <form action="/importlogin" method="post" class="forms_form">
-                        <fieldset class="forms_fieldset">
-                            <div class="forms_field">
-                                <input name="email" type="email" placeholder="Email" class="forms_field-input" required
-                                    autofocus />
+    {{!-- start --}}
+
+
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Log In</h4>
+                                            <form action="/importlogin" method="post">
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-style"
+                                                        placeholder="Your Email" id="logemail" autocomplete="off"
+                                                        required>
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="psw1" class="form-style"
+                                                        placeholder="Your Password" id="logpass" autocomplete="off"
+                                                        required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <button class="btn mt-4" type="submit">Log in and Import</button>
+                                                <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
+                                                        password?</a></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Sign Up</h4>
+                                            <form action="/impregister" method="post">
+                                                <div class="form-group">
+                                                    <input type="text" name="fname" class="form-style"
+                                                        placeholder="Your Full Name" id="logname" autocomplete="off"
+                                                        required>
+                                                    <i class="input-icon uil uil-user"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="email" name="email" class="form-style"
+                                                        placeholder="Your Email" id="logemail" autocomplete="off"
+                                                        required>
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="number" name="mobile" class="form-style"
+                                                        placeholder="Number" id="logemail" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-phone"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="psw1" class="form-style"
+                                                        placeholder="Password" id="logpass" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="psw2" class="form-style"
+                                                        placeholder="Confirm Password" id="logpass" autocomplete="off"
+                                                        required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <button class="btn mt-4" type="submit">Sign up and Import</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="forms_field">
-                                <input name="psw1" type="text" placeholder="Password" class="forms_field-input"
-                                    required />
-                            </div>
-                        </fieldset>
-                        <div class="forms_buttons">
-                            <button type="button" class="forms_buttons-forgot">Forgot password?</button>
-                            <input type="submit" value="Log In" class="forms_buttons-action">
                         </div>
-                    </form>
-                </div>
-                <div class="user_forms-signup">
-                    <h2 class="forms_title">Sign Up</h2>
-                    <form action="/impregister" method="post" class="forms_form">
-                        <fieldset class="forms_fieldset">
-                            <div class="forms_field">
-                                <input name="fname" type="text" placeholder="Full Name" class="forms_field-input"
-                                    required />
-                            </div>
-                            <div class="forms_field">
-                                <input name="email" type="email" placeholder="Email" class="forms_field-input"
-                                    required />
-                            </div>
-                            <div class="forms_field">
-                                <input name="mobile" type="text" placeholder="Number" class="forms_field-input"
-                                    required />
-                            </div>
-                            <div class="forms_field">
-                                <input name="psw1" type="text" placeholder="Password" class="forms_field-input"
-                                    required />
-                            </div>
-                            <div class="forms_field">
-                                <input name="psw2" type="text" placeholder="Confirm Password" class="forms_field-input"
-                                    required />
-                            </div>
-                        </fieldset>
-                        <div class="forms_buttons">
-                            <input type="submit" value="Sign up" class="forms_buttons-action">
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <script src="js/importlogin.js"></script>
+    </div>
+    {{!-- end --}}
+    {{!-- {{>foot1}} --}}
 </body>
 
 </html>
