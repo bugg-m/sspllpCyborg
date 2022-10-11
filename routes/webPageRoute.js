@@ -11,7 +11,7 @@ routerWeb.get("/productlist", (req, res) => {
 
 // Get request for dev test
 routerWeb.get("/testpage", (req, res) => {
-  res.render("productlist");
+  res.render("test");
 });
 routerWeb.get("/importlogin", (req, res) => {
   res.render("importlogin");
