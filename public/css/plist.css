@@ -3,6 +3,15 @@
 /*Color Variables*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:300i,400,400i,500,700,900");
 
+
+body {
+    min-height: 130vh;
+    top: 60px;
+    position: relative;
+}
+
+
+
 .multi_step_form {
     background: #f6f9fb;
     display: block;
@@ -101,8 +110,41 @@
 .multi_step_form #msform fieldset .fg_2,
 .multi_step_form #msform fieldset .fg_3 {
     padding-top: 10px;
-    display: block;
+    /* display: block; */
     overflow: hidden;
+}
+
+.opts {
+    border-radius: 3px;
+    border: 1px solid #d8e1e7;
+    height: 55px;
+    font: 400 15px/48px "Roboto", sans-serif;
+    color: #5f6771;
+    box-shadow: none;
+    outline: none;
+    width: 120%;
+}
+
+#opts1 {
+    border-radius: 3px;
+    border: 1px solid #d8e1e7;
+    height: 55px;
+    padding: 0 25px;
+    font: 400 15px/48px "Roboto", sans-serif;
+    color: #5f6771;
+    box-shadow: none;
+    outline: none;
+}
+
+.opts:hover,
+.opts:focus {
+    border-color: #5cb85c;
+}
+
+.opt_group {
+    display: flex;
+    justify-content: center;
+
 }
 
 .multi_step_form #msform fieldset .fg_3 {
@@ -114,7 +156,7 @@
     border-radius: 3px;
     border: 1px solid #d8e1e7;
     padding: 0 20px;
-    height: auto;
+    height: 55px;
     font: 400 15px/48px "Roboto", sans-serif;
     color: #5f6771;
     box-shadow: none;
@@ -253,7 +295,9 @@
 }
 
 .multi_step_form #msform fieldset .input-group {
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
 }
 
 .multi_step_form #msform fieldset .input-group .custom-file {
@@ -323,7 +367,7 @@
 .multi_step_form #msform #progressbar li {
     list-style-type: none;
     color: #99a2a8;
-    font-size: 9px;
+    font-size: 7px;
     width: calc(100%/3);
     float: left;
     position: relative;
@@ -331,17 +375,17 @@
 }
 
 .multi_step_form #msform #progressbar li:nth-child(2):before {
-    content: "";
+    content: "size";
 }
 
 .multi_step_form #msform #progressbar li:nth-child(3):before {
-    content: "";
+    content: "img";
 }
 
 .multi_step_form #msform #progressbar li:before {
-    content: "";
+    content: "info";
     font: normal normal normal 30px/50px Ionicons;
-    width: 50px;
+    width: 70px;
     height: 50px;
     line-height: 50px;
     display: block;
@@ -406,4 +450,184 @@
     background: #405867;
     border-color: #405867;
     color: #fff;
+}
+
+
+
+
+
+
+/* img  */
+
+
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: inherit;
+    margin: 0 0 0.75em 0;
+    color: #728c8d;
+    text-align: center;
+}
+
+.box {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+.upload-options {
+    position: relative;
+    height: 50px;
+    background-color: cadetblue;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    transition: background-color ease-in-out 150ms;
+}
+
+.upload-options:hover {
+    background-color: #7fb1b3;
+}
+
+.upload-options input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.upload-options label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.upload-options label::after {
+    content: "+";
+    font-family: "Material Icons";
+    margin-left: 43%;
+    font-size: 2.5rem;
+    color: #e6e6e6;
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 1.25rem);
+    z-index: 0;
+}
+
+.upload-options label span {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.upload-options label span:hover i.material-icons {
+    color: lightgray;
+}
+
+.js--image-preview {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-image: url("");
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.js--image-preview::after {
+    content: "Preview";
+    font-family: "Material Icons";
+    position: relative;
+    font-size: 1em;
+    color: #e6e6e6;
+    top: 48%;
+    /* left: calc(50% - 2.25rem); */
+    justify-content: center;
+    z-index: 0;
+}
+
+.js--image-preview.js--no-default::after {
+    display: none;
+}
+
+.js--image-preview:nth-child(2) {
+    background-image: url("http://bastianandre.at/giphy.gif");
+}
+
+i.material-icons {
+    transition: color 100ms ease-in-out;
+    font-size: 2.25em;
+    line-height: 55px;
+    color: white;
+    display: block;
+}
+
+.drop {
+    display: block;
+    position: absolute;
+    background: rgba(95, 158, 160, 0.2);
+    border-radius: 100%;
+    transform: scale(0);
+}
+
+.animate {
+    -webkit-animation: ripple 0.4s linear;
+    animation: ripple 0.4s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+
+@media (max-width: 770px) {
+    body {
+        min-height: 120vh;
+    }
+
+    .multi_step_form #msform fieldset {
+        margin-bottom: 50px;
+    }
 }

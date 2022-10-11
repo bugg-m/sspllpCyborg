@@ -6,10 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Listing - SriSriPort</title>
+    <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/plist.css">
-    {{!--
-    <script src="js/jq.js"></script> --}}
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/css/intlTelInput.css">
@@ -25,90 +24,168 @@
 </head>
 
 <body>
+
+    {{>navbar}}
     <!-- Multi step form -->
     <section class="multi_step_form">
         <form action="/productlist" method="post" id="msform">
             <!-- Tittle -->
             <div class="tittle">
-                <h2>Verification Process</h2>
-                <p>In order to use this service, you have to complete this verification process</p>
+                <h2>List your Products</h2>
+                {{!-- <p>In order to use this service, you have to complete this verification process</p> --}}
             </div>
             <!-- progressbar -->
             <ul id="progressbar">
-                <li class="active">Verify Phone</li>
-                <li>Upload Documents</li>
-                <li>Security Questions</li>
+                <li class="active">Product Details</li>
+                <li>Description</li>
+                <li>Upload Images</li>
             </ul>
             <!-- fieldsets -->
             <fieldset>
-                <h3>Setup your phone</h3>
-                <h6>We will send you a SMS. Input the code to verify.</h6>
+                <h3>Basic Product Information</h3>
+
                 <div class="form-row">
+                    {{!-- <div class="form-group col-md-6">
+                        <input type="text" id="phone" class="form-control" placeholder="+91">
+                    </div> --}}
                     <div class="form-group col-md-6">
-                        <input type="text" id="phone" class="form-control" placeholder="+880">
+                        <input type="text" class="form-control" placeholder="Product Name" name="pName" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="1123456789">
+                        <input type="number" class="form-control" placeholder="Supply Ability" name="supplyAbility">
+                    </div>
+                    <div class="form-group col-md-6 opt_group">
+                        <input type="number" class="form-control" placeholder="Min-Price" name="minPrice">
+                        {{>currency}}
+                    </div>
+                    <div class="form-group col-md-6 opt_group">
+                        <input type="number" class="form-control" placeholder="Max-Price" name="maxPrice">
+                        {{>currency}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="number" class="form-control" placeholder="Maximum Order Quantity" name="moq">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Special-Offer" name="specialOffer">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Payment terms" name="paymentTerms">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Processing time" name="processingTime">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="availabilityOfSample" required>
+                            <option value="" selected disabled>Aavailability of sample</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select name="eximT&C" class="form-control">
+                            <option value="" selected disabled>EXIM Terms & Conditions</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="If yes, price per sample"
+                            name="pricePerSample">
                     </div>
                 </div>
-                <div class="done_text">
-                    <a href="#" class="don_icon"><i class="ion-android-done"></i></a>
-                    <h6>A secret code is sent to your phone. <br>Please enter it here.</h6>
-                </div>
-                <!-- <div class="code_group">
-                    <input type="text" class="form-control" placeholder="0">
-                    <input type="text" class="form-control" placeholder="0">
-                    <input type="text" class="form-control" placeholder="0">
-                    <input type="text" class="form-control" placeholder="0">
-                </div> -->
+
                 <button type="button" class="action-button previous_button">Back</button>
                 <button type="button" class="next action-button">Continue</button>
             </fieldset>
             <fieldset>
-                <h3>Verify Your Identity</h3>
-                <h6>Please upload any of these documents to verify your Identity.</h6>
-                <div class="passport">
-                    <h4>Govt. ID card <br>PassPort <br>Driving License.</h4>
-                    <a href="#" class="don_icon"><i class="ion-android-done"></i></a>
+                <h3>Description</h3>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" placeholder="Model Number" name="modelNumber">
                 </div>
-                <div class="input-group">
-                    <div class="custom-file">
-                        <!-- <input type="file" class="custom-file-input" id="upload"> -->
-                        <input type="text" placeholder="enter">
-                        <label class="custom-file-label" for="upload"><i class="ion-android-cloud-outline"></i>Choose
-                            file</label>
-                    </div>
+
+                <div class="form-group fg_2">
+                    <textarea name="overview" class="form-control" cols="10" rows="3" placeholder="Overview"></textarea>
                 </div>
-                <!-- <ul class="file_added">
-                    <li>File Added:</li>
-                    <li><a href="#"><i class="ion-paperclip"></i>national_id_card.png</a></li>
-                    <li><a href="#"><i class="ion-paperclip"></i>national_id_card_back.png</a></li>
-                </ul> -->
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="design" placeholder="Design">
+                </div>
+                <div class="form-group fg_2 opt_group">
+                    <input type="text" name="size/dimensions" class="form-control" placeholder="Size/Dimensions">
+                    <select id="opts1" name="unit">
+                        <option value="">Choose</option>
+                        <option value="lbh in meter">lbh in meter</option>
+                        <option value="lbh in cm">lbh in cm</option>
+                        <option value="lbh in inches">lbh in inches</option>
+                        <option value="Weight(kg)">Weight(kg)</option>
+                        <option value="Weight(grams)">Weight(grams)</option>
+                        <option value="Weight(lbs)">Weight(lbs)</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Others">Others</option>
+                        <option value="Extra-Large">Extra-Large</option>
+                    </select>
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="material" placeholder="Material">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="color" placeholder="Color">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="features" placeholder="Features">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="type" placeholder="Type">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="generalUse" placeholder="General Use">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="afterSaleService" placeholder="After sale Service">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="applications" placeholder="Applications">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="packaging" placeholder="Packaging">
+                </div>
+
                 <button type="button" class="action-button previous previous_button">Back</button>
                 <button type="button" class="next action-button">Continue</button>
             </fieldset>
             <fieldset>
-                <h3>Create Security Questions</h3>
-                <h6>Please update your account with security questions</h6>
-                <div class="form-group">
-                    <select class="product_select">
-                        <option data-display="1. Choose A Question">1. Choose A Question</option>
-                        <option>2. Choose A Question</option>
-                        <option>3. Choose A Question</option>
-                    </select>
-                </div>
-                <div class="form-group fg_2">
-                    <input type="text" class="form-control" placeholder="Anwser here:">
-                </div>
-                <div class="form-group">
-                    <select class="product_select">
-                        <option data-display="1. Choose A Question">1. Choose A Question</option>
-                        <option>2. Choose A Question</option>
-                        <option>3. Choose A Question</option>
-                    </select>
-                </div>
-                <div class="form-group fg_3">
-                    <input type="text" class="form-control" placeholder="Anwser here:">
+                <h3>Upload Product Images</h3>
+                <div class="input-group">
+                    {{!-- <h1>Upload Product Images</h1> --}}
+                    <div class="wrapper">
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <button type="button" class="action-button previous previous_button">Back</button>
                 <button class="action-button" type="submit">Submit</button>
