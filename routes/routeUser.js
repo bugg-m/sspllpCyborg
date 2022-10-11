@@ -102,7 +102,7 @@ router.post("/contactus", async (req, res) => {
   }
 });
 router.post("/productlist", (req, res) => {
-  res.redirect("/");
+  res.redirect("/marketplace");
 });
 
 // router.get("/login", (req, res) => {

@@ -2,343 +2,199 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product list - SriSriPort</title>
+    <title>Product Listing - SriSriPort</title>
     <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/plist.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/js/intlTelInput.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+</head>
 
 <body>
+
     {{>navbar}}
-    <div class="container">
-        <header>Product list</header>
-        <div class="progress-bar">
-            <div class="step">
-                <p>Product Details</p>
-                <div class="bullet">
-                    <span>1</span>
-                </div>
-                <div class="check fas fa-check"></div>
+    <!-- Multi step form -->
+    <section class="multi_step_form">
+        <form action="/productlist" method="post" id="msform">
+            <!-- Tittle -->
+            <div class="tittle">
+                <h2>List your Products</h2>
+                {{!-- <p>In order to use this service, you have to complete this verification process</p> --}}
             </div>
-            <div class="step">
-                <p>Description</p>
-                <div class="bullet">
-                    <span>2</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Upload Images</p>
-                <div class="bullet">
-                    <span>3</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <!-- <div class="step">
-                <p>Debt</p>
-                <div class="bullet">
-                    <span>4</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Adress</p>
-                <div class="bullet">
-                    <span>5</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Submit</p>
-                <div class="bullet">
-                    <span>6</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div> -->
-        </div>
-        <div class="form-outer">
-            <form action="/productlist" method="post">
-                <div class="page slide-page">
-                    <div class="title">Basic Info:</div>
-                    <div class="field">
-                        <div class="label">Product Name</div>
-                        <input type="text" name="pName" required />
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Product Details</li>
+                <li>Description</li>
+                <li>Upload Images</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h3>Basic Product Information</h3>
+
+                <div class="form-row">
+                    {{!-- <div class="form-group col-md-6">
+                        <input type="text" id="phone" class="form-control" placeholder="+91">
+                    </div> --}}
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Product Name" name="pName" required>
                     </div>
-                    <div class="field">
-                        <div class="label">Supply Ability</div>
-                        <select name="supplyAbility" required>
-                            <option value="">Choose Yes/No</option>
+                    <div class="form-group col-md-6">
+                        <input type="number" class="form-control" placeholder="Supply Ability" name="supplyAbility">
+                    </div>
+                    <div class="form-group col-md-6 opt_group">
+                        <input type="number" class="form-control" placeholder="Min-Price" name="minPrice">
+                        {{>currency}}
+                    </div>
+                    <div class="form-group col-md-6 opt_group">
+                        <input type="number" class="form-control" placeholder="Max-Price" name="maxPrice">
+                        {{>currency}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="number" class="form-control" placeholder="Maximum Order Quantity" name="moq">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Special-Offer" name="specialOffer">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Payment terms" name="paymentTerms">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Processing time" name="processingTime">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="availabilityOfSample" required>
+                            <option value="" selected disabled>Aavailability of sample</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
                     </div>
-                    <div class="field">
-                        <div class="label">Min-Price</div>
-                        <input type="text" name="minPrice" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Max-Price</div>
-                        <input type="text" name="maxPrice" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">MOQ</div>
-                        <input type="text" name="moq" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Special-Offer</div>
-                        <input type="text" name="specialOffer" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Payment terms</div>
-                        <input type="text" name="paymentTerms" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">EXIM Terms & Conditions</div>
-                        <select name="eximT&C" required>
-                            <option value="">Choose Yes/No</option>
+                    <div class="form-group col-md-6">
+                        <select name="eximT&C" class="form-control">
+                            <option value="" selected disabled>EXIM Terms & Conditions</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
                     </div>
-                    <div class="field">
-                        <div class="label">Aavailability of sample</div>
-                        <select name="availabilityOfSample" required>
-                            <option value="">Choose Yes/No</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-
-                    </div>
-                    <div class="field">
-                        <div class="label">If yes, price per sample</div>
-                        <input type="text" name="pricePerSample" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Processing time</div>
-                        <input type="text" name="processingTime" required />
-                    </div>
-                    <div class="field">
-                        <button class="firstNext next">Next</button>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="If yes, price per sample"
+                            name="pricePerSample">
                     </div>
                 </div>
 
-                <div class="page">
-                    <div class="title">Description:</div>
-                    <div class="field">
-                        <div class="label">Overview</div>
-                        <textarea name="overview" required style="width: 100%;" cols="50" rows="40"></textarea>
-                    </div>
-                    <div class="field">
-                        <div class="label">Model Number</div>
-                        <input type="text" name="modelNumber" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Design Cycle</div>
-                        <input type="text" name="designCycle" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Size/Dimensions</div>
-                        <input type="text" name="size/dimensions" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Material</div>
-                        <input type="text" name="material" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Color</div>
-                        <input type="text" name="color" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Features</div>
-                        <input type="text" name="features" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Type</div>
-                        <input type="text" name="type" />
-                    </div>
-                    <div class="field">
-                        <div class="label">General use</div>
-                        <input type="text" name="generalUse" />
-                    </div>
-                    <div class="field">
-                        <div class="label">After sale Service</div>
-                        <input type="text" name="afterSaleService" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Applications</div>
-                        <input type="text" name="applications" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Packaging</div>
-                        <input type="text" name="packaging" required />
-                    </div>
+                <button type="button" class="action-button previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+            <fieldset>
+                <h3>Description</h3>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" placeholder="Model Number" name="modelNumber">
+                </div>
 
-                    <div class="field btns">
-                        <button class="prev-1 prev">Previous</button>
-                        <button class="next-1 next">Next</button>
+                <div class="form-group fg_2">
+                    <textarea name="overview" class="form-control" cols="10" rows="3" placeholder="Overview"></textarea>
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="design" placeholder="Design">
+                </div>
+                <div class="form-group fg_2 opt_group">
+                    <input type="text" name="size/dimensions" class="form-control" placeholder="Size/Dimensions">
+                    <select id="opts1" name="unit">
+                        <option value="">Choose</option>
+                        <option value="lbh in meter">lbh in meter</option>
+                        <option value="lbh in cm">lbh in cm</option>
+                        <option value="lbh in inches">lbh in inches</option>
+                        <option value="Weight(kg)">Weight(kg)</option>
+                        <option value="Weight(grams)">Weight(grams)</option>
+                        <option value="Weight(lbs)">Weight(lbs)</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Others">Others</option>
+                        <option value="Extra-Large">Extra-Large</option>
+                    </select>
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="material" placeholder="Material">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="color" placeholder="Color">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="features" placeholder="Features">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="type" placeholder="Type">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="generalUse" placeholder="General Use">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="afterSaleService" placeholder="After sale Service">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="applications" placeholder="Applications">
+                </div>
+                <div class="form-group fg_2">
+                    <input type="text" class="form-control" name="packaging" placeholder="Packaging">
+                </div>
+
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+            <fieldset>
+                <h3>Upload Product Images</h3>
+                <div class="input-group">
+                    {{!-- <h1>Upload Product Images</h1> --}}
+                    <div class="wrapper">
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="page">
-                    <div class="title">Upload Images:</div>
-                    <div class="field" id="imgUpload">
-                        <input name="image" required type="file">
-                        <input name="image" required type="file">
-                        <input name="image" required type="file">
-                        <input name="image" required type="file">
-                        <input name="image" required type="file">
-                        <input name="image" required type="file">
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-5 prev">Previous</button>
-                        <button type="submit">Submit</button>
-                    </div>
-                    <!-- <div class="field btns">
-                        <button class="prev-2 prev">Previous</button>
-                        <button class="next-2 next">Next</button>
-                    </div> -->
-                </div>
-                <!-- <div class="page">
-                    <div class="title">Contact Info 3:</div>
-                    <div class="field">
-                        <div class="label">Email Address</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Phone Number</div>
-                        <input type="Number" required />
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-3 prev">Previous</button>
-                        <button class="next-3 next">Next</button>
-                    </div>
-                </div> -->
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button class="action-button" type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </section>
+    <!-- End Multi step form -->
+    <script src="js/plist.js"></script>
 
-                <!-- <div class="page">
-                    <div class="title">Date of Birth:</div>
-                    <div class="field">
-                        <div class="label">Date</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Gender</div>
-                        <select required>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-4 prev">Previous</button>
-                        <button class="next-4 next">Next</button>
-                    </div>
-                </div> -->
-
-                <!-- <div class="page">
-                    <div class="title">Login Details:</div>
-                    <div class="field">
-                        <div class="label">Username</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="label">Password</div>
-                        <input type="password" required />
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-5 prev">Previous</button>
-                        <button class="submit">Submit</button>
-                    </div>
-                </div> -->
-            </form>
-        </div>
-    </div>
-    {{!-- {{>foot1}} --}}
-
-    {{!--
-    <script src="js/plist.js"></script> --}}
-    <script>
-        initMultiStepForm();
-
-        function initMultiStepForm() {
-            const progressNumber = document.querySelectorAll(".step").length;
-            const slidePage = document.querySelector(".slide-page");
-            const submitBtn = document.querySelector(".submit");
-            const progressText = document.querySelectorAll(".step p");
-            const progressCheck = document.querySelectorAll(".step .check");
-            const bullet = document.querySelectorAll(".step .bullet");
-            const pages = document.querySelectorAll(".page");
-            const nextButtons = document.querySelectorAll(".next");
-            const prevButtons = document.querySelectorAll(".prev");
-            const stepsNumber = pages.length;
-
-            if (progressNumber !== stepsNumber) {
-                console.warn(
-                    "Error, number of steps in progress bar do not match number of pages"
-                );
-            }
-
-            document.documentElement.style.setProperty("--stepNumber", stepsNumber);
-
-            let current = 1;
-
-            for (let i = 0; i < nextButtons.length; i++) {
-                nextButtons[i].addEventListener("click", function (event) {
-                    event.preventDefault();
-
-                    inputsValid = validateInputs(this);
-                    // inputsValid = true;
-
-                    if (inputsValid) {
-                        slidePage.style.marginLeft = `-${(100 / stepsNumber) * current
-                            }%`;
-                        bullet[current - 1].classList.add("active");
-                        progressCheck[current - 1].classList.add("active");
-                        progressText[current - 1].classList.add("active");
-                        current += 1;
-                    }
-                });
-            }
-
-            for (let i = 0; i < prevButtons.length; i++) {
-                prevButtons[i].addEventListener("click", function (event) {
-                    event.preventDefault();
-                    slidePage.style.marginLeft = `-${(100 / stepsNumber) * (current - 2)
-                        }%`;
-                    bullet[current - 2].classList.remove("active");
-                    progressCheck[current - 2].classList.remove("active");
-                    progressText[current - 2].classList.remove("active");
-                    current -= 1;
-                });
-            }
-            submitBtn.addEventListener("click", function () {
-                bullet[current - 1].classList.add("active");
-                progressCheck[current - 1].classList.add("active");
-                progressText[current - 1].classList.add("active");
-                current += 1;
-            });
-
-            function validateInputs(ths) {
-                let inputsValid = true;
-
-                const inputs =
-                    ths.parentElement.parentElement.querySelectorAll("input");
-                for (let i = 0; i < inputs.length; i++) {
-                    const valid = inputs[i].checkValidity();
-                    if (!valid) {
-                        inputsValid = false;
-                        inputs[i].classList.add("invalid-input");
-                    } else {
-                        inputs[i].classList.remove("invalid-input");
-                    }
-                }
-                return inputsValid;
-            }
-        }
-
-    </script>
 </body>
 
 </html>
