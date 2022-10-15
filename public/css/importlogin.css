@@ -334,7 +334,6 @@ h6 span {
     -ms-flex-pack: center;
     text-align: center;
     border: none;
-    z-index: 20;
     background-color: #05e828;
     color: rgb(0, 0, 0);
     /* box-shadow: 0 2px 2px 0 #b0ebb9; */

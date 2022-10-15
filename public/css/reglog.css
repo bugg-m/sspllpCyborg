@@ -372,11 +372,11 @@ h1 {
 }
 
 .js--image-preview::after {
-  content: "Preview";
+  content: "Upload Profile Image";
   font-family: "Material Icons";
   position: relative;
   font-size: 1em;
-  color: #e6e6e6;
+  color: #000000;
   top: 48%;
   /* left: calc(50% - 2.25rem); */
   justify-content: center;
