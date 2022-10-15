@@ -53,6 +53,11 @@ const registerSchema = new mongoose.Schema({
         default: Date.now
 
     },
+    img:
+    {
+        type:String,
+       
+    }
   
 
 });

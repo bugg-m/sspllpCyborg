@@ -25,7 +25,7 @@ routerWeb.get("/exim", (req, res) => {
   res.render("client");
 });
 routerWeb.get("/sell", (req, res) => {
-  res.render("sell");
+  res.render("productlist");
 });
 routerWeb.get("/product", (req, res) => {
   res.render("marketplace");
