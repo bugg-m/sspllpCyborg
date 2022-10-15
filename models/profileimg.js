@@ -13,7 +13,8 @@ const pimgSchema = new mongoose.Schema({
     img:
     {
         
-      type: String
+      type: String,
+      
     }
 
   

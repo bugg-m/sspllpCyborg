@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <h1>Testing...</h1>
+    <h1>Testing...multiple</h1>
 
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <form action="/uploadmany" method="POST" enctype="multipart/form-data">
         <div>
             <label for="email">email</label>
             <input type="email" id="name" placeholder="mail" value="" name="email" required>
@@ -19,7 +19,7 @@
 
         <div>
             <label for="image">Upload Image</label>
-            <input type="file" id="image" name="avatar" value="" required>
+            <input type="file" id="image" name="myfiles" multiple>
         </div>
         <div>
             <button type="submit">Submit</button>
@@ -38,7 +38,11 @@
     <br>
     <br>
 
-    <img width="150px" src="uploads/{{image}}" alt="">
+    {{!-- <img width="150px" src="uploads/{{image}}" alt=""> --}}
+    <img width="150px" src="uploads/{{img1}}" alt="">
+    <img width="150px" src="uploads/{{img2}}" alt="">
+    <img width="150px" src="uploads/{{img3}}" alt="">
+    <img width="150px" src="uploads/{{img4}}" alt="">
 
     {{!-- {{image}} --}}
 
