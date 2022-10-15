@@ -22,9 +22,10 @@ body {
     text-align: center;
     position: relative;
     padding-top: 50px;
-    min-height: 820px;
-    max-width: 810px;
+    min-height: 100%;
+    max-width: 80%;
     margin: 0 auto;
+    padding-bottom: 30px;
     background: #ffffff;
     z-index: 1;
 }
@@ -47,6 +48,7 @@ body {
 
 .multi_step_form #msform fieldset {
     border: 0;
+    /* min-height: 160vh; */
     padding: 20px 105px 0;
     position: relative;
     width: 100%;
