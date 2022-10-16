@@ -1,209 +1,273 @@
 <!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product list - SriSriPort</title>
+    <title>List Products - SriSriPort</title>
+    <!--======== CSS ======== -->
+
+
+    <!--===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
     <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/plist.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="css/plist.css">
+    {{!--
+    <link rel="stylesheet" type="text/css" href="css/footer.css"> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
+
+    <!--<title>Responsive Regisration Form </title>-->
 </head>
 
 <body>
+    {{!-- {{>header}} --}}
     {{>navbar}}
     <div class="container">
-        <header>Product list</header>
-        <div class="progress-bar">
-            <div class="step">
-                <p>Product Details</p>
-                <div class="bullet">
-                    <span>1</span>
+        <header>Product Listing</header>
+
+        <form action="/eximreg" method="post">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Basic Product Details</span>
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label>Product Name<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="productName" placeholder="Enter Product Name" />
+                        </div>
+                        <div class="input-field">
+                            <label>Supply Ability<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="supplyAbility" placeholder="Enter supply ability" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Min-Price<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <div class="mprice">
+                                <input type="number" name="minPrice" placeholder="Enter minimum price" required>
+                                {{>currency}}
+                            </div>
+                        </div>
+
+                        <div class="input-field">
+
+                            <label>Max-Price<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <div class="mprice">
+                                <input type="number" name="maxPrice" placeholder="Enter maximum price">
+                                {{>currency}}
+                            </div>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Maximum Order Quantity<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="number" name="moq" placeholder="Enter quantity" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Special-Offer<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="specialOffer" placeholder="Enter type" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Payment terms<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="paymentTerms" placeholder="Enter terms" required>
+                        </div>
+                        <div class="input-field">
+                            <label>EXIM Terms & Conditions<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <select class="selopt" name="eximTandC">
+                                <option value="" selected disabled>Choose</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Aavailability of sample<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <select class="selopt" name="availabilityOfSample">
+                                <option value="" disabled selected>Choose</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>If yes, price per sample<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="pricePerSample" placeholder="Enter price per sample" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Processing time<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="processingTime" placeholder="Enter quantity" required>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="check fas fa-check"></div>
+
+                <div class="details ID">
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
             </div>
-            <div class="step">
-                <p>Description</p>
-                <div class="bullet">
-                    <span>2</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Upload Images</p>
-                <div class="bullet">
-                    <span>3</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
 
-        </div>
-        <div class="form-outer">
-            <form action="/productlist" method="POST" enctype="multipart/form-data">
-                <div class="page slide-page">
-                    <div class="title">Basic Info:</div>
-                    <div class="field">
-                        <div class="label">Product Name</div>
-                        <input type="text" name="productName" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Supply Ability</div>
-                        <input type="number" name="supplyAbility" />
-                    </div>
-                    <div class="field opt_group">
-                        <div class="label">Min-Price</div>
-                        <input type="number" name="minPrice" />
-                        {{>currency}}
-                    </div>
-                    <div class="field opt_group">
-                        <div class="label">Max-Price</div>
-                        <input type="number" name="maxPrice" />
-                        {{>currency}}
-                    </div>
-                    <div class="field">
-                        <div class="label">Maximum Order Quantity</div>
-                        <input type="number" name="moq" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Special-Offer</div>
-                        <input type="text" name="specialOffer" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Payment terms</div>
-                        <input type="text" name="paymentTerms" />
-                    </div>
-                    <div class="field">
-                        <div class="label">EXIM Terms & Conditions</div>
-                        <select class="selopt" name="eximTandC">
-                            <option value="" selected disabled>Choose</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <div class="label">Aavailability of sample</div>
-                        <select class="selopt" name="availabilityOfSample">
-                            <option value="" disabled selected>Choose</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Product Description</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Overview<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input name="overview" cols="50" rows="4" placeholder="Write details" required>
+                        </div>
 
-                    </div>
-                    <div class="field">
-                        <div class="label">If yes, price per sample</div>
-                        <input type="text" name="pricePerSample" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Processing time</div>
-                        <input type="text" name="processingTime" />
-                    </div>
-                    <div class="field">
-                        <button class="firstNext next">Next</button>
-                    </div>
-                </div>
+                        <div class="input-field">
+                            <label>Model Number<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="modelNumber" placeholder="Enter model number" />
+                        </div>
 
-                <div class="page">
-                    <div class="title">Description:</div>
-                    <div class="field">
-                        <div class="label">Overview</div>
-                        <textarea name="overview" style="width: 100%;" cols="50" rows="4"></textarea>
-                    </div>
-                    <div class="field">
-                        <div class="label">Model Number</div>
-                        <input type="text" name="modelNumber" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Design</div>
-                        <input type="text" name="design" />
-                    </div>
-                    <div class="field opt_group">
-                        <div class="label">Size/Dimensions</div>
-                        <input type="text" name="sizeAndDimensions" />
-                        <select id="opts1" name="sizeUnit">
-                            <option value="">Choose</option>
-                            <option value="lbh in meter">lbh in meter</option>
-                            <option value="lbh in cm">lbh in cm</option>
-                            <option value="lbh in inches">lbh in inches</option>
-                            <option value="Weight(kg)">Weight(kg)</option>
-                            <option value="Weight(grams)">Weight(grams)</option>
-                            <option value="Weight(lbs)">Weight(lbs)</option>
-                            <option value="Small">Small</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Large">Large</option>
-                            <option value="Extra-Large">Extra-Large</option>
-                            <option value="Others">Others(specify)</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <div class="label">Material</div>
-                        <input type="text" name="material" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Color</div>
-                        <input type="text" name="color" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Features</div>
-                        <input type="text" name="features" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Type</div>
-                        <input type="text" name="type" />
-                    </div>
-                    <div class="field">
-                        <div class="label">General use</div>
-                        <input type="text" name="generalUse" />
-                    </div>
-                    <div class="field">
-                        <div class="label">After sale Service</div>
-                        <input type="text" name="afterSaleService" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Applications</div>
-                        <input type="text" name="applications" />
-                    </div>
-                    <div class="field">
-                        <div class="label">Packaging</div>
-                        <input type="text" name="packaging" />
-                    </div>
+                        <div class="input-field">
+                            <label>Design<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="design" placeholder="Enter design">
 
-                    <div class="field btns">
-                        <button class="prev-1 prev">Previous</button>
-                        <button class="next-1 next">Next</button>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Size/Dimensions</label>
+                            <input type="text" name="sizeAndDimensions" placeholder="Enter dimensions">
+                            <select class="opts" name="sizeUnit">
+                                <option value="">Choose</option>
+                                <option value="lbh in meter">lbh in meter</option>
+                                <option value="lbh in cm">lbh in cm</option>
+                                <option value="lbh in inches">lbh in inches</option>
+                                <option value="Weight(kg)">Weight(kg)</option>
+                                <option value="Weight(grams)">Weight(grams)</option>
+                                <option value="Weight(lbs)">Weight(lbs)</option>
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
+                                <option value="Extra-Large">Extra-Large</option>
+                                <option value="Others">Others(specify)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Material</label>
+                            <input type="text" name="material" placeholder="Enter material">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Color<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="color" placeholder="Enter color">
+
+                        </div>
+
+                        <div class="input-field">
+                            <label>Features<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="features" placeholder="Enter features">
+
+                        </div>
+                        <div class="input-field">
+                            <label>Type<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="type" placeholder="Enter type">
+
+                        </div>
+                        <div class="input-field">
+                            <label>General Use<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="generalUse" placeholder="Enter general use">
+
+                        </div>
+                        <div class="input-field">
+                            <label>After sale service<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="afterSaleService" placeholder="Enter after sale services">
+
+                        </div>
+                        <div class="input-field">
+                            <label>Applications<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="applications" placeholder="Enter applications">
+
+                        </div>
+                        <div class="input-field">
+                            <label>Packaging<span
+                                    style="color: red !important; display: inline;  float: none;">*</span></label>
+                            <input type="text" name="packaging" placeholder="Packaging details">
+
+                        </div>
+
+
                     </div>
                 </div>
-                <div class="page">
+
+                <div class="details family">
                     <h1>Upload Product Images</h1>
                     <div class="field" id="imgUpload">
-                        {{!-- <div class="title">Upload atleast three images</div> --}}
+                        <div class="title">Select minimum 3 and maximum 6 images of the product</div>
                         <div class="wrapper">
                             <div class="box">
                                 <div class="js--image-preview"></div>
                                 <div class="upload-options">
-                                    <label>Select atleast 3 and atmost 6 images of your product.
+                                    <label>
                                         <input type="file" class="image-upload" name="myfiles" multiple />
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field btns">
-                        <button class="prev-5 prev">Previous</button>
-                        <button type="submit">Submit</button>
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+
+                        <button type="submit" class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
                     </div>
-                    <input type="submit" value="listnow">
                 </div>
+            </div>
 
-            </form>
-        </div>
+        </form>
     </div>
-    {{!-- {{>foot1}} --}}
+    <script>
+        const form = document.querySelector("form"),
+            nextBtn = form.querySelector(".nextBtn"),
+            backBtn = form.querySelector(".backBtn"),
+            allInput = form.querySelectorAll(".first input");
 
+
+        nextBtn.addEventListener("click", () => {
+            allInput.forEach(input => {
+                if (input.value != "") {
+                    form.classList.add('secActive');
+                } else {
+                    form.classList.remove('secActive');
+                }
+            })
+        })
+
+        backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+    </script>
     <script src="js/plist.js"></script>
-
+    {{!-- {{>foot1}} --}}
 </body>
 
 </html>
