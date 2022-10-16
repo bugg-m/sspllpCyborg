@@ -118,6 +118,7 @@ body {
     width: calc(100% / var(--stepNumber));
     transition: margin-left 0.3s ease-in-out;
     padding: 20px;
+
 }
 
 .form-outer form .page .title {
