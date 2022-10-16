@@ -10,7 +10,7 @@ routerWeb.get("/productlist", (req, res) => {
 });
 
 // Get request for dev test
-routerWeb.get("/testpage", (req, res) => {
+routerWeb.get("/test", (req, res) => {
   res.render("test");
 });
 routerWeb.get("/importlogin", (req, res) => {

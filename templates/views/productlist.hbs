@@ -42,42 +42,42 @@
 
         </div>
         <div class="form-outer">
-            <form action="/productlist" method="post">
+            <form action="/productlist" method="POST" enctype="multipart/form-data">
                 <div class="page slide-page">
                     <div class="title">Basic Info:</div>
                     <div class="field">
                         <div class="label">Product Name</div>
-                        <input type="text" name="productName" required />
+                        <input type="text" name="productName"   />
                     </div>
                     <div class="field">
                         <div class="label">Supply Ability</div>
-                        <input type="number" name="supplyAbility" required />
+                        <input type="number" name="supplyAbility"   />
                     </div>
                     <div class="field opt_group">
                         <div class="label">Min-Price</div>
-                        <input type="number" name="minPrice" required />
+                        <input type="number" name="minPrice"   />
                         {{>currency}}
                     </div>
                     <div class="field opt_group">
                         <div class="label">Max-Price</div>
-                        <input type="number" name="maxPrice" required />
+                        <input type="number" name="maxPrice"   />
                         {{>currency}}
                     </div>
                     <div class="field">
                         <div class="label">Maximum Order Quantity</div>
-                        <input type="number" name="moq" required />
+                        <input type="number" name="moq"   />
                     </div>
                     <div class="field">
                         <div class="label">Special-Offer</div>
-                        <input type="text" name="specialOffer" required />
+                        <input type="text" name="specialOffer"   />
                     </div>
                     <div class="field">
                         <div class="label">Payment terms</div>
-                        <input type="text" name="paymentTerms" required />
+                        <input type="text" name="paymentTerms"   />
                     </div>
                     <div class="field">
                         <div class="label">EXIM Terms & Conditions</div>
-                        <select class="selopt" name="eximTandC" required>
+                        <select class="selopt" name="eximTandC"  >
                             <option value="" selected disabled>Choose</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="field">
                         <div class="label">Aavailability of sample</div>
-                        <select class="selopt" name="availabilityOfSample" required>
+                        <select class="selopt" name="availabilityOfSample"  >
                             <option value="" disabled selected>Choose</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="field">
                         <div class="label">Processing time</div>
-                        <input type="text" name="processingTime" required />
+                        <input type="text" name="processingTime"   />
                     </div>
                     <div class="field">
                         <button class="firstNext next">Next</button>
@@ -109,11 +109,11 @@
                     <div class="title">Description:</div>
                     <div class="field">
                         <div class="label">Overview</div>
-                        <textarea name="overview" required style="width: 100%;" cols="50" rows="4"></textarea>
+                        <textarea name="overview"   style="width: 100%;" cols="50" rows="4"></textarea>
                     </div>
                     <div class="field">
                         <div class="label">Model Number</div>
-                        <input type="text" name="modelNumber" required />
+                        <input type="text" name="modelNumber"   />
                     </div>
                     <div class="field">
                         <div class="label">Design</div>
@@ -121,8 +121,8 @@
                     </div>
                     <div class="field opt_group">
                         <div class="label">Size/Dimensions</div>
-                        <input type="text" name="sizeAndDimensions" required />
-                        <select id="opts1" name="unit">
+                        <input type="text" name="sizeAndDimensions"   />
+                        <select id="opts1" name="sizeUnit">
                             <option value="">Choose</option>
                             <option value="lbh in meter">lbh in meter</option>
                             <option value="lbh in cm">lbh in cm</option>
@@ -133,17 +133,17 @@
                             <option value="Small">Small</option>
                             <option value="Medium">Medium</option>
                             <option value="Large">Large</option>
-                            <option value="Others">Others</option>
                             <option value="Extra-Large">Extra-Large</option>
+                            <option value="Others">Others(specify)</option>
                         </select>
                     </div>
                     <div class="field">
                         <div class="label">Material</div>
-                        <input type="text" name="material" required />
+                        <input type="text" name="material"   />
                     </div>
                     <div class="field">
                         <div class="label">Color</div>
-                        <input type="text" name="color" required />
+                        <input type="text" name="color"   />
                     </div>
                     <div class="field">
                         <div class="label">Features</div>
@@ -159,7 +159,7 @@
                     </div>
                     <div class="field">
                         <div class="label">After sale Service</div>
-                        <input type="text" name="afterSaleService" required />
+                        <input type="text" name="afterSaleService"   />
                     </div>
                     <div class="field">
                         <div class="label">Applications</div>
@@ -167,7 +167,7 @@
                     </div>
                     <div class="field">
                         <div class="label">Packaging</div>
-                        <input type="text" name="packaging" required />
+                        <input type="text" name="packaging"  />
                     </div>
 
                     <div class="field btns">
@@ -178,55 +178,13 @@
                 <div class="page">
                     <h1>Upload Product Images</h1>
                     <div class="field" id="imgUpload">
-                        <div class="title">Upload atleast three images</div>
+                        {{!-- <div class="title">Upload atleast three images</div> --}}
                         <div class="wrapper">
                             <div class="box">
                                 <div class="js--image-preview"></div>
                                 <div class="upload-options">
-                                    <label>
-                                        <input type="file" class="image-upload" accept="image/*" />
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="box">
-                                <div class="js--image-preview"></div>
-                                <div class="upload-options">
-                                    <label>
-                                        <input type="file" class="image-upload" accept="image/*" />
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="box">
-                                <div class="js--image-preview"></div>
-                                <div class="upload-options">
-                                    <label>
-                                        <input type="file" class="image-upload" accept="image/*" />
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="js--image-preview"></div>
-                                <div class="upload-options">
-                                    <label>
-                                        <input type="file" class="image-upload" accept="image/*" />
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="js--image-preview"></div>
-                                <div class="upload-options">
-                                    <label>
-                                        <input type="file" class="image-upload" accept="image/*" />
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="js--image-preview"></div>
-                                <div class="upload-options">
-                                    <label>
-                                        <input type="file" class="image-upload" accept="image/*" />
+                                    <label>Select atleast 3 and atmost 6 images of your product.
+                                        <input type="file" class="image-upload" name="myfiles" multiple />
                                     </label>
                                 </div>
                             </div>
@@ -236,7 +194,7 @@
                         <button class="prev-5 prev">Previous</button>
                         <button type="submit">Submit</button>
                     </div>
-
+<input type="submit" value="listnow">
                 </div>
 
             </form>

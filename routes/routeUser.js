@@ -51,16 +51,6 @@ router.post("/importclient", async (req, res) => {
   }
 });
 
-router.get("/test", (req, res) => {
-  Imgprofile.find({ email: "krvivi28@gmail.com" }, (err, items) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("An error occurred", err);
-    } else {
-      res.render("imagepage", { item: items.img });
-    }
-  });
-});
 
 router.post("/eximreg", async (req, res) => {
   try {
@@ -90,6 +80,31 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
       const data = await reguser.save();
 
       res.status(200).render("profile",{name:reguser.fname,image:reguser.img});
+      // alert("you have successfully registered for srisriport!!  login to continue");
+    } else {
+      res.send("password mismatch");
+    }
+  } catch (err) {
+    res.status(401).send(err);
+  }
+});
+router.post("/eximregister", upload.single("avatar"), async (req, res) => {
+  try {
+    const p1 = req.body.psw1;
+    const p2 = req.body.psw2;
+    if (p1 === p2) {
+      const reguser = new Register({
+        fname: req.body.fname,
+        lname: req.body.lname,
+        email: req.body.email,
+        mobile: req.body.mobile,
+        psw1: req.body.psw1,
+        psw2: req.body.psw2,
+        img: req.file.filename,
+      });
+      const data = await reguser.save();
+
+      res.status(200).render("exim");
       // alert("you have successfully registered for srisriport!!  login to continue");
     } else {
       res.send("password mismatch");

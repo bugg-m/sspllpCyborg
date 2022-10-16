@@ -1,41 +1,27 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+const mongoose = require("mongoose");
+const validator = require("validator");
 
 const importSchema = new mongoose.Schema({
-    importcat:
-    {
-        type: String,
-        
+  email: {
+    email: String,
+  },
+  importcat: {
+    type: String,
+  },
+  importreg: {
+    type: String,
+  },
+  howmuch: {
+    type: Number,
+  },
+  impunit: {
+    type: String,
+  },
 
-
-    },
-    importreg:
-    {
-        type: String
-    },
-    howmuch:
-    {
-        type: Number,
-       
-
-    },
-    impunit:
-    {
-        type: String,
-
-    },
-
-
-    date:
-    {
-        type: Date,
-        default: Date.now
-
-    },
-  
-
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
-const Importuser = new mongoose.model("Importuser",importSchema );
+const Importuser = new mongoose.model("Importuser", importSchema);
 module.exports = Importuser;
-
-
