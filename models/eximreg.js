@@ -5,125 +5,125 @@ const eximregSchema = new mongoose.Schema({
     fname:
     {
         type: String,
-        required: true,
+        // required: true,
     },
     dob:
     {
-        type:Date,
+        type: Date,
 
-        required:true,
+        // required:true,
 
     },
-   tradeRole:
-   {
-      type:String,
-      required:true,
-   },
+    tradeRole:
+    {
+        type: String,
+        //   required:true,
+    },
 
     email:
     {
         type: String,
-        required: true,
+        // required: true,
     },
     mobileNumber:
     {
         type: String,
-        required: true,
+        // required: true,
     },
     idType:
     {
-        type:String,
-     
+        type: String,
+
     },
     idNumber:
     {
-        type:String,
-        
+        type: String,
+
     },
     issuedAuthority:
     {
-        type:String,
-    
+        type: String,
+
     },
     issuedCountry:
     {
-        type:String,
+        type: String,
     },
     jobTitle:
     {
-        type:String,
+        type: String,
     },
     country:
     {
         type: String,
-        required: true,
+        // required: true,
     },
     companyName:
     {
-        type:String,
-        required:true,
+        type: String,
+        // required:true,
     },
     companyType:
     {
-        type:String,
-        required:true,
+        type: String,
+        // required:true,
     },
     address:
     {
-        type:String,
+        type: String,
     },
     state:
     {
-        type:String,
+        type: String,
     },
     city:
     {
-        type:String,
+        type: String,
     },
     pincode:
     {
-        type:Number,
-        required:true,
+        type: Number,
+        // required:true,
     },
     companyNumber:
     {
-        type:String,
+        type: String,
     },
     Landline:
     {
-        type:String,
+        type: String,
     },
     gstNumber:
     {
-        type:String,
+        type: String,
     },
     iecCode:
     {
-        type:String,
+        type: String,
     },
     currentAccount:
     {
-        type:String,
+        type: String,
     },
     aoCode:
     {
-        type:String,
+        type: String,
     },
     letsTalk:
     {
-        type:String,
+        type: String,
     },
     ifYes:
     {
-        type:String,
+        type: String,
     },
     alternateMobileNumber:
     {
-        type:String,
+        type: String,
     },
     noIdont:
     {
-        type:String,
+        type: String,
     },
     date:
     {

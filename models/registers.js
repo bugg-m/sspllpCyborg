@@ -29,9 +29,9 @@ const registerSchema = new mongoose.Schema({
     },
     mobile:
     {
-        type: Number,
+        type: String,
         required: true,
-        unique: [true, "email id already present"]
+        unique: [true, "mobile number is already registered!! login to continue"]
 
     },
 
@@ -53,6 +53,11 @@ const registerSchema = new mongoose.Schema({
         default: Date.now
 
     },
+    img:
+    {
+        type:String,
+       
+    }
   
 
 });

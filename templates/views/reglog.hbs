@@ -9,7 +9,6 @@
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="css/newnav.css">
   <link rel="stylesheet" type="text/css" href="css/reglog.css">
   <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
@@ -62,7 +61,7 @@
         </div>
         <div class="signup-form">
           <div class="title">Signup</div>
-          <form action="/register" method="post">
+          <form action="/register" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
@@ -88,6 +87,19 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Repeat Password" name="psw2" required>
               </div>
+              {{!-- img start --}}
+              <div class="wrapper">
+                <div class="box">
+                  <div class="js--image-preview"></div>
+                  <div class="upload-options">
+                    <label>
+                      <input type="file" class="image-upload" name="avatar" accept="image/*" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+              {{!-- img end --}}
+
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
@@ -99,6 +111,101 @@
     </div>
   </div>
   {{>foot1}}
+  {{!-- img script start --}}
+  <script>
+    function initImageUpload(box) {
+      let uploadField = box.querySelector('.image-upload');
+
+      uploadField.addEventListener('change', getFile);
+
+      function getFile(e) {
+        let file = e.currentTarget.files[0];
+        checkType(file);
+      }
+
+      function previewImage(file) {
+        let thumb = box.querySelector('.js--image-preview'),
+          reader = new FileReader();
+
+        reader.onload = function () {
+          thumb.style.backgroundImage = 'url(' + reader.result + ')';
+        }
+        reader.readAsDataURL(file);
+        thumb.className += ' js--no-default';
+      }
+
+      function checkType(file) {
+        let imageType = /image.*/;
+        if (!file.type.match(imageType)) {
+          throw 'Datei ist kein Bild';
+        } else if (!file) {
+          throw 'Kein Bild gewählt';
+        } else {
+          previewImage(file);
+        }
+      }
+
+    }
+
+    // initialize box-scope
+    var boxes = document.querySelectorAll('.box');
+
+    for (let i = 0; i < boxes.length; i++) {
+      let box = boxes[i];
+      initDropEffect(box);
+      initImageUpload(box);
+    }
+
+
+
+    /// drop-effect
+    function initDropEffect(box) {
+      let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
+
+      // get clickable area for drop effect
+      area = box.querySelector('.js--image-preview');
+      area.addEventListener('click', fireRipple);
+
+      function fireRipple(e) {
+        area = e.currentTarget
+        // create drop
+        if (!drop) {
+          drop = document.createElement('span');
+          drop.className = 'drop';
+          this.appendChild(drop);
+        }
+        // reset animate class
+        drop.className = 'drop';
+
+        // calculate dimensions of area (longest side)
+        areaWidth = getComputedStyle(this, null).getPropertyValue("width");
+        areaHeight = getComputedStyle(this, null).getPropertyValue("height");
+        maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(areaHeight, 10));
+
+        // set drop dimensions to fill area
+        drop.style.width = maxDistance + 'px';
+        drop.style.height = maxDistance + 'px';
+
+        // calculate dimensions of drop
+        dropWidth = getComputedStyle(this, null).getPropertyValue("width");
+        dropHeight = getComputedStyle(this, null).getPropertyValue("height");
+
+        // calculate relative coordinates of click
+        // logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+        x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10) / 2);
+        y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10) / 2) - 30;
+
+        // position drop and animate
+        drop.style.top = y + 'px';
+        drop.style.left = x + 'px';
+        drop.className += ' animate';
+        e.stopPropagation();
+
+      }
+    }
+
+  </script>
+  {{!-- img script end --}}
 </body>
 
 </html>

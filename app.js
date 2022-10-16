@@ -4,7 +4,8 @@ require("./db/db");
 const path = require("path");
 const app = express();
 const hbs = require("hbs");
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
+// const port=3000;
 
 // Path set static and temp eng
 const staticPath = path.join(__dirname, "public");
@@ -28,34 +29,10 @@ const userRouter = require("./routes/routeUser");
 app.use(userRouter);
 app.use(userWeb);
 
-// image uploader multer
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "image/jpeg" ||
-    file.mimetype === "image/jpg" ||
-    file.mimetype === "image/png"
-  ) {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname);
-  },
-});
-const upload = multer({
-  storage: storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5,
-  },
-  fileFilter: fileFilter,
-});
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

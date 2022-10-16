@@ -35,6 +35,7 @@
           <span class="links_name">Dashboard</span>
         </a>
       </li>
+      
       <li>
         <a href="#">
           <i class='bx bx-box'></i>
@@ -108,9 +109,38 @@
         <i class='bx bx-search'></i>
       </div>
       <div class="profile-details">
-        <a href="/profile"><img src="images/viv.jpeg" alt=""></a>
+        <a href="/profile"><img src="uploads/{{image}}" alt=""></a>
         <span class="admin_name">{{name}}</span>
-        <i class='bx bx-chevron-down'></i>
+        <i onclick="openForm()" class='open-button bx bx-chevron-down'></i>
+        <div class="form-popup" id="myForm">
+          
+            {{!-- change --}}
+            {{!-- <h1>update profile image</h1> --}}
+
+            <form class="form-container" action="/upload" method="POST" enctype="multipart/form-data">
+              <div>
+                <label for="email">email</label>
+                <input type="email" id="name" placeholder="confirm your mail" value="" name="email" required>
+              </div>
+
+              <div>
+                <label for="image">Upload profile Image</label>
+                <input type="file" id="image" name="avatar" value="" required>
+              </div>
+              <div>
+                <button class="btn" type="submit">upload</button>
+              </div>
+              <button type="button" class="btn cancel" onclick="closeForm()">discard</button>
+            </form>
+
+
+            {{!-- change --}}
+
+
+
+
+
+        </div>
       </div>
     </nav>
 
@@ -290,6 +320,16 @@
         sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
       } else
         sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+
+    // profile img js
+
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
     }
   </script>
 

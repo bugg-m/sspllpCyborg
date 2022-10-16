@@ -5,18 +5,30 @@ const routerWeb = new express.Router();
 routerWeb.get("/", (req, res) => {
   res.render("index");
 });
+routerWeb.get("/productlist", (req, res) => {
+  res.render("productlist");
+});
+
+// Get request for dev test
+routerWeb.get("/testpage", (req, res) => {
+  res.render("test");
+});
+routerWeb.get("/importlogin", (req, res) => {
+  res.render("importlogin");
+});
 
 routerWeb.get("/profile", (req, res) => {
   res.render("profile");
 });
+
 routerWeb.get("/exim", (req, res) => {
   res.render("client");
 });
 routerWeb.get("/sell", (req, res) => {
-  res.render("sell");
+  res.render("productlist");
 });
 routerWeb.get("/product", (req, res) => {
-  res.render("product");
+  res.render("marketplace");
 });
 routerWeb.get("/vision", (req, res) => {
   res.render("vision");
@@ -28,7 +40,7 @@ routerWeb.get("/register", (req, res) => {
   res.render("register");
 });
 routerWeb.get("/blog", (req, res) => {
-  res.render("sell");
+  res.render("blog");
 });
 routerWeb.get("/reglog", (req, res) => {
   res.render("reglog");

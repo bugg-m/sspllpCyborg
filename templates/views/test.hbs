@@ -1,217 +1,51 @@
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing - SriSriPort</title>
-    <!----======== CSS ======== -->
-
-
-    <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
-
-    <link rel="stylesheet" type="text/css" href="css/exim.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
-
-    <!--<title>Responsive Regisration Form </title>-->
+    <title>Dev Test</title>
 </head>
 
 <body>
-    {{!-- {{>header}} --}}
-    {{>navbar}}
-    <div class="container">
-        <header>Registration</header>
+    <h1>Testing...multiple</h1>
 
-        <form action="#">
-            <div class="form first">
-                <div class="details personal">
-                    <span class="title">Personal Details</span>
+    <form action="/uploadmany" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="email">email</label>
+            <input type="email" id="name" placeholder="mail" value="" name="email" required>
+        </div>
 
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Trade Role</label>
-                            <select required>
-                                <option disabled selected>Please select trade role</option>
-                                <option>Import</option>
-                                <option>Export</option>
-                                <option>Buyer</option>
-                                <option>Seller</option>
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Date of Birth</label>
-                            <input type="date" placeholder="Enter birth date" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Email</label>
-                            <input type="text" placeholder="Enter your email" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Mobile Number</label>
-                            <input type="text" placeholder="Enter mobile number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Country</label>
-                            <select required>
-                                <option disabled selected>Select gender</option>
-                                <option>India</option>
-                                <option>China</option>
-                                <option>USA</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="details ID">
-                    <span class="title">Identity Details</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>ID Type</label>
-                            <select required>
-                                <option disabled selected>Select the ID you have</option>
-                                <option>PAN</option>
-                                <option>Adhaar</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>ID Number</label>
-                            <input type="text" placeholder="Enter ID number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Issued Authority</label>
-                            <input type="text" placeholder="Enter issued authority" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Issued Country</label>
-                            <input type="text" placeholder="Enter issued country" required>
-                        </div>
-
-                    </div>
-
-                    <button class="nextBtn">
-                        <span class="btnText">Next</span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="form second">
-                <div class="details address">
-                    <span class="title">Company Details</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>GST Registration</label>
-                            <input type="text" placeholder="Enter GST Registration Number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>IEC Code</label>
-                            <input type="text" placeholder="Enter IEC Code" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Current Account</label>
-                            <input type="text" placeholder="Enter Current Account Number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>AO Code</label>
-                            <input type="text" placeholder="Enter AO-Code(Optional)" required>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="details family">
-                    <span class="title">Do'nt have IEC-Code, don't worry our team will help you</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Let's talk </label>
-                            <select required>
-                                <option disabled selected>Do you wish to have IEC_code from us</option>
-                                <option>YES</option>
-                                <option>NO</option>
-
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>If YES</label>
-                            <input type="text" placeholder="Enter your contact number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Mobile</label>
-                            <input type="text" placeholder="Enter alternate number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>No, I don't</label>
-                            <input type="text" placeholder="enter reason" required>
-                        </div>
-
-                    </div>
-
-                    <div class="buttons">
-                        <div class="backBtn">
-                            <i class="uil uil-navigator"></i>
-                            <span class="btnText">Back</span>
-                        </div>
-
-                        <button class="sumbit">
-                            <span class="btnText">Submit</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <script>
-        const form = document.querySelector("form"),
-            nextBtn = form.querySelector(".nextBtn"),
-            backBtn = form.querySelector(".backBtn"),
-            allInput = form.querySelectorAll(".first input");
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="myfiles" multiple>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 
 
-        nextBtn.addEventListener("click", () => {
-            allInput.forEach(input => {
-                if (input.value != "") {
-                    form.classList.add('secActive');
-                } else {
-                    form.classList.remove('secActive');
-                }
-            })
-        })
+    <form action="/getimg" method="post">
+        <input type="email" name="email" placeholder="enter mail to find image">
+        <button type="submit">find</button>
+        
 
-        backBtn.addEventListener("click", () => form.classList.remove('secActive'));
 
-    </script>
-    <!--<script src="script.js"></script>-->
-    {{>foot1}}
+    </form>
+    {{!-- <img src="{{image}}" alt=""> --}}
+    <br>
+    <br>
+
+    {{!-- <img width="150px" src="uploads/{{image}}" alt=""> --}}
+    <img width="150px" src="uploads/{{img1}}" alt="">
+    <img width="150px" src="uploads/{{img2}}" alt="">
+    <img width="150px" src="uploads/{{img3}}" alt="">
+    <img width="150px" src="uploads/{{img4}}" alt="">
+
+    {{!-- {{image}} --}}
+
 </body>
 
 </html>
