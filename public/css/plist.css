@@ -181,7 +181,7 @@ select:hover {
 }
 
 .container form button,
-.backBtn {
+.backBtn ,.submitnew{
     display: flex;
     align-items: center;
     justify-content: center;
