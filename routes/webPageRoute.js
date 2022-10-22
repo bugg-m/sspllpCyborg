@@ -48,6 +48,12 @@ routerWeb.get("/reglog", (req, res) => {
 routerWeb.get("/ourteam", (req, res) => {
   res.render("ourteam");
 });
+routerWeb.get("/upgrade", (req, res) => {
+  res.render("plans");
+});
+routerWeb.get("/planpay", (req, res) => {
+  res.render("planpay");
+});
 
 routerWeb.get("*", (req, res) => {
   res.status(404).render("404", { err: "page not found" });
