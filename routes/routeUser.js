@@ -173,7 +173,7 @@ router.post("/login", async (req, res) => {
       res.status(400).send("invalid email or password!!");
     }
   } catch (err) {
-    res.status(401).send(err);
+    res.status(401).send("account not found pls signup to continue");
   }
 });
 
