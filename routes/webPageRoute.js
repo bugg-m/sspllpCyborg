@@ -45,9 +45,9 @@ routerWeb.get("/blog", (req, res) => {
 routerWeb.get("/reglog", (req, res) => {
   res.render("reglog");
 });
-routerWeb.get("/ourteam", (req, res) => {
-  res.render("ourteam");
-});
+// routerWeb.get("/ourteam", (req, res) => {
+//   res.render("ourteam");
+// });
 routerWeb.get("/upgrade", (req, res) => {
   res.render("plans");
 });
