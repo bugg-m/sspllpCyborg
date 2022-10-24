@@ -7,6 +7,7 @@
     font-size: 3em;
     font-size: 300%;
     margin-bottom: 20px;
+    margin-top: 70px;
     letter-spacing: 0.04em;
   }
   .pricingTable > .pricingTable-subtitle {
@@ -30,7 +31,7 @@
   .pricingTable-firstTable_table {
     vertical-align: middle;
     width: 31%;
-    background-color: #363836;
+    background-color: #13182b;
     display: inline-block;
     padding: 0px 30px 40px;
     text-align: center;
@@ -229,6 +230,10 @@
     padding: 15px;
     font-size: 0.9em;
     border-bottom: 2px solid #ebedec;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
   @media screen and (max-width: 1068px) {
     .pricingTable-firstTable_table__options {
