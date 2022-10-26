@@ -166,7 +166,7 @@ router.post("/login", async (req, res) => {
     if (p1 === userData.psw1) {
       res
         .status(200)
-        .render("profile", { name: userData.fname, image: userData.img });
+        .render("profile1", { name: userData.fname, image: userData.img });
       // res.status(200).render("profile", { name: userData.fname, image: userimgData.img });
       // res.send(userimgData.img);
     } else {
@@ -238,7 +238,7 @@ router.post("/uploadmany", upload.array("myfiles", 6), async (req, res) => {
 
     // const usertextData = await Register.findOne({ email: email });
     const userData = await new Productlist({
-      // email: email,
+      email: req.body.email,
       productName: req.body.productName,
       supplyAbility: req.body.supplyAbility,
       minPrice: req.body.minPrice,
