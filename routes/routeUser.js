@@ -80,7 +80,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
 
       res
         .status(200)
-        .render("profile", { name: reguser.fname, image: reguser.img });
+        .render("profile1", { name: reguser.fname, image: reguser.img });
       // alert("you have successfully registered for srisriport!!  login to continue");
     } else {
       res.send("password mismatch");
