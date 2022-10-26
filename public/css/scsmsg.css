@@ -121,6 +121,7 @@ button,a{
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 button:hover,a:hover{

@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 
 const productlistSchema = new mongoose.Schema({
+  email:
+  {
+    type:String
+  },
   productName: {
     type: String,
   },
@@ -10,6 +14,10 @@ const productlistSchema = new mongoose.Schema({
   },
   minPrice: {
     type: Number,
+  },
+  priceCurrency:
+  {
+    type: String,
   },
   maxPrice: {
     type: Number,
@@ -90,6 +98,11 @@ const productlistSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  verified:
+  {
+    type:Boolean,
+    default:false
+  }
 });
 const Productlist = new mongoose.model("Productlist", productlistSchema);
 module.exports = Productlist;

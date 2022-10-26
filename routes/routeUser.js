@@ -165,15 +165,14 @@ router.post("/login", async (req, res) => {
 
     if (p1 === userData.psw1) {
       res
-        .status(200)
-        .render("profile", { name: userData.fname, image: userData.img });
+        .status(200).render("profile", { name: userData.fname, image: userData.img });
       // res.status(200).render("profile", { name: userData.fname, image: userimgData.img });
       // res.send(userimgData.img);
     } else {
       res.status(400).send("invalid email or password!!");
     }
   } catch (err) {
-    res.status(401).send(err);
+    res.status(401).send("account not found pls signup to continue");
   }
 });
 
@@ -232,13 +231,13 @@ router.post("/uploadmany", upload.array("myfiles", 6), async (req, res) => {
     var arr = [];
     imgs.forEach((element) => {
       arr.push(element.filename);
-      console.log(element.filename);
+      // console.log(element.filename);
     });
     // console.log(arr);
 
     // const usertextData = await Register.findOne({ email: email });
     const userData = await new Productlist({
-      // email: email,
+      email: req.body.email,
       productName: req.body.productName,
       supplyAbility: req.body.supplyAbility,
       minPrice: req.body.minPrice,
@@ -264,7 +263,7 @@ router.post("/uploadmany", upload.array("myfiles", 6), async (req, res) => {
       afterSaleService: req.body.afterSaleService,
       applications: req.body.applications,
       packaging: req.body.packaging,
-      // priceCurrency: req.body.priceCurrency,
+      priceCurrency: req.body.priceCurrency,
       sizeUnit: req.body.sizeUnit,
       imgs: arr,
     });
