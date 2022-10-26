@@ -232,7 +232,7 @@ router.post("/uploadmany", upload.array("myfiles", 6), async (req, res) => {
     var arr = [];
     imgs.forEach((element) => {
       arr.push(element.filename);
-      console.log(element.filename);
+      // console.log(element.filename);
     });
     // console.log(arr);
 
@@ -264,7 +264,7 @@ router.post("/uploadmany", upload.array("myfiles", 6), async (req, res) => {
       afterSaleService: req.body.afterSaleService,
       applications: req.body.applications,
       packaging: req.body.packaging,
-      // priceCurrency: req.body.priceCurrency,
+      priceCurrency: req.body.priceCurrency,
       sizeUnit: req.body.sizeUnit,
       imgs: arr,
     });
