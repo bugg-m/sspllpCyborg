@@ -53,7 +53,6 @@
 
 
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
 
 <head>
@@ -64,24 +63,25 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/test.css">
-
+    <link rel="stylesheet" href="">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
+    {{>navbar}}
     <section class="container forms">
         <div class="form login">
             <div class="form-content">
                 <header>Login</header>
-                <form action="#">
+                <form action="/clientlogin" method="post">
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
+                        <input type="email" name="email" placeholder="Email" class="input">
                     </div>
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password">
+                        <input name="psw1" type="password" placeholder="Password" class="password">
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
 
@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="field button-field">
-                        <button>Login</button>
+                        <button type="submit">Login</button>
                     </div>
                 </form>
 
@@ -110,7 +110,7 @@
 
             <div class="media-options">
                 <a href="#" class="field google">
-                   <img src="images/google.png" alt="google" class="google-img">
+                    <img src="images/google.png" alt="google" class="google-img">
                     <span>Login with Google</span>
                 </a>
             </div>
@@ -122,22 +122,43 @@
         <div class="form signup">
             <div class="form-content">
                 <header>Signup</header>
-                <form action="#">
+                <form action="/eximregister" method="post" enctype="multipart/form-data">
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
+                        <input type="text" name="fname" placeholder="Enter first name" class="input">
+                    </div>
+                    <div class="field input-field">
+                        <input type="text" name="lname" placeholder="Enter last name" class="input">
                     </div>
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Create password" class="password">
+                        <input name="email" type="email" placeholder="Email" class="input">
+                    </div>
+                    <div class="field input-field">
+                        <input type="text" name="mobile" placeholder="Enter mobile number" class="input">
                     </div>
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Confirm password" class="password">
+                        <input name="psw1" type="password" placeholder="Create password" class="password">
+                    </div>
+
+                    <div class="field input-field">
+                        <input name="psw2" type="password" placeholder="Confirm password" class="password">
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
-
+                    {{!-- img start --}}
+                    <div class="wrapper">
+                        <div class="box">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" name="avatar" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- img end --}}
                     <div class="field button-field">
-                        <button>Signup</button>
+                        <button type="submit">Signup</button>
                     </div>
                 </form>
 
@@ -166,7 +187,7 @@
     </section>
 
     <!-- JavaScript -->
-    <!--<script src="js/script.js"></script>-->
+    <script src="js/fileinput.js"></script>
     <script>
         const forms = document.querySelector(".forms"),
             pwShowHide = document.querySelectorAll(".eye-icon"),
@@ -197,6 +218,7 @@
         })
 
     </script>
+
 </body>
 
 </html>

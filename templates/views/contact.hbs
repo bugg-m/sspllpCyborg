@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    {{!-- <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css"> --}}
+    {{!--
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css"> --}}
 
 
 </head>
@@ -69,15 +70,30 @@
     <div class="accordion">
         <div class="accordion-content">
             <header>
-                <span class="title">What do you mean by Accordion?</span>
+                <span class="title">Q.1 What is Srisriport LLP and what services does it offer to its clients ?</span>
                 <i class="fa-solid fa-plus"></i>
             </header>
 
             <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem
-                nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non
-                enim numquam voluptatem?
+                SRISRIPORT LLP is an Export and Import firm, which provides logistic support, custom clearance, finding
+                customers for Export / Import, container booking/ tracking etc. We help companies like yours, Export and
+                Import their goods and services and expand business exponentially.
+                <br>
+                <br>
+                We are a <span>ONE STOP SOLUTION</span> platform for all your EXIM needs.
+                <br>
+                <br>
+                Our services include
             </p>
+            <ol>
+                <li>Documentation procedures of GST, Importer Exporter Code, RCMC, and other trade licenses(India).</li>
+                <li>Finding International Market and Customers.</li>
+                <li>End to End Logistics.</li>
+                <li>Overlooking Payment and other relevant compliances.</li>
+                <li>Continual EXIM Consultancy.</li>
+                <li>24/7 Customer Support.</li>
+            </ol>
+
         </div>
 
         <div class="accordion-content">
@@ -133,34 +149,34 @@
     <script>
         const accordionContent = document.querySelectorAll(".accordion-content");
 
-accordionContent.forEach((item, index) => {
-    let header = item.querySelector("header");
-    header.addEventListener("click", () =>{
-        item.classList.toggle("open");
+        accordionContent.forEach((item, index) => {
+            let header = item.querySelector("header");
+            header.addEventListener("click", () => {
+                item.classList.toggle("open");
 
-        let description = item.querySelector(".description");
-        if(item.classList.contains("open")){
-            description.style.height = `${description.scrollHeight}px`; //scrollHeight property returns the height of an element including padding , but excluding borders, scrollbar or margin
-            item.querySelector("i").classList.replace("fa-plus", "fa-minus");
-        }else{
-            description.style.height = "0px";
-            item.querySelector("i").classList.replace("fa-minus", "fa-plus");
+                let description = item.querySelector(".description");
+                if (item.classList.contains("open")) {
+                    description.style.height = `${description.scrollHeight}px`; //scrollHeight property returns the height of an element including padding , but excluding borders, scrollbar or margin
+                    item.querySelector("i").classList.replace("fa-plus", "fa-minus");
+                } else {
+                    description.style.height = "0px";
+                    item.querySelector("i").classList.replace("fa-minus", "fa-plus");
+                }
+                removeOpen(index); //calling the funtion and also passing the index number of the clicked header
+            })
+        })
+
+        function removeOpen(index1) {
+            accordionContent.forEach((item2, index2) => {
+                if (index1 != index2) {
+                    item2.classList.remove("open");
+
+                    let des = item2.querySelector(".description");
+                    des.style.height = "0px";
+                    item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
+                }
+            })
         }
-        removeOpen(index); //calling the funtion and also passing the index number of the clicked header
-    })
-})
-
-function removeOpen(index1){
-    accordionContent.forEach((item2, index2) => {
-        if(index1 != index2){
-            item2.classList.remove("open");
-
-            let des = item2.querySelector(".description");
-            des.style.height = "0px";
-            item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
-        }
-    })
-}
 
     </script>
 </body>

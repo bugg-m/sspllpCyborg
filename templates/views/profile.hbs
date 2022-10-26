@@ -35,7 +35,7 @@
           <span class="links_name">My Documents</span>
         </a>
       </li>
-      
+
       <li>
         <a href="#">
           <i class='bx bx-box'></i>
@@ -113,28 +113,38 @@
         <span class="admin_name">{{name}}</span>
         <i onclick="openForm()" class='open-button bx bx-chevron-down'></i>
         <div class="form-popup" id="myForm">
-          
-            {{!-- change --}}
-            {{!-- <h1>update profile image</h1> --}}
 
-            <form class="form-container" action="/upload" method="POST" enctype="multipart/form-data">
-              <div>
-                <label for="email">email</label>
-                <input type="email" id="name" placeholder="confirm your mail" value="" name="email" required>
+          {{!-- change --}}
+          {{!-- <h1>update profile image</h1> --}}
+
+          <form class="form-container" action="/upload" method="POST" enctype="multipart/form-data">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="name" placeholder="Confirm your mail" value="" name="email" required>
+            </div>
+
+            <div>
+              <label for="image">Upload profile Image</label>
+              <div class="wrapper">
+                <div class="imgbox">
+                  <div class="js--image-preview"></div>
+                  <div class="upload-options">
+                    <label>
+                      <input type="file" class="image-upload" name="avatar" accept="image/*" required />
+                    </label>
+                  </div>
+                </div>
               </div>
-
-              <div>
-                <label for="image">Upload profile Image</label>
-                <input type="file" id="image" name="avatar" value="" required>
-              </div>
-              <div>
-                <button class="btn" type="submit">upload</button>
-              </div>
-              <button type="button" class="btn cancel" onclick="closeForm()">discard</button>
-            </form>
+              {{!-- <input type="file" id="image" name="avatar" value="" required> --}}
+            </div>
+            <div>
+              <button class="btn" type="submit">upload</button>
+            </div>
+            <button type="button" class="btn cancel" onclick="closeForm()">discard</button>
+          </form>
 
 
-            {{!-- change --}}
+          {{!-- change --}}
 
 
 
@@ -311,6 +321,7 @@
     </div>
   </section>
 
+  <script src="js/fileinput.js"></script>
   <script>
     let sidebar = document.querySelector(".sidebar");
     let sidebarBtn = document.querySelector(".sidebarBtn");
