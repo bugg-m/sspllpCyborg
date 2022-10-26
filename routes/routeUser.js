@@ -80,7 +80,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
 
       res
         .status(200)
-        .render("profile1", { name: reguser.fname, image: reguser.img });
+        .render("profile", { name: reguser.fname, image: reguser.img });
       // alert("you have successfully registered for srisriport!!  login to continue");
     } else {
       res.send("password mismatch");
@@ -165,8 +165,7 @@ router.post("/login", async (req, res) => {
 
     if (p1 === userData.psw1) {
       res
-        .status(200)
-        .render("profile1", { name: userData.fname, image: userData.img });
+        .status(200).render("profile", { name: userData.fname, image: userData.img });
       // res.status(200).render("profile", { name: userData.fname, image: userimgData.img });
       // res.send(userimgData.img);
     } else {
