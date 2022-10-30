@@ -113,7 +113,7 @@ router.post("/eximregister", upload.single("avatar"), async (req, res) => {
   }
 });
 
-router.post("/impregister", async (req, res) => {
+router.post("/impregister", upload.single("avatar"), async (req, res) => {
   try {
     const p1 = req.body.psw1;
     const p2 = req.body.psw2;
@@ -125,6 +125,7 @@ router.post("/impregister", async (req, res) => {
         mobile: req.body.mobile,
         psw1: req.body.psw1,
         psw2: req.body.psw2,
+        img: req.file.filename,
       });
       const data = await reguser.save();
 
@@ -161,7 +162,6 @@ router.post("/login", async (req, res) => {
 
     if (p1 === userData.psw1) {
       res.status(200).render("profile", { name: userData.fname, image: userData.img });
-      res.status(200).render("profile", { name: reguser.fname, image: reguser.img });
 
     } else {
       res.status(400).send("invalid email or password!!");
