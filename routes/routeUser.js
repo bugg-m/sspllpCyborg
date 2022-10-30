@@ -113,7 +113,7 @@ router.post("/eximregister", upload.single("avatar"), async (req, res) => {
   }
 });
 
-router.post("/impregister",upload.single("avatar"), async (req, res) => {
+router.post("/impregister", upload.single("avatar"), async (req, res) => {
   try {
     const p1 = req.body.psw1;
     const p2 = req.body.psw2;
