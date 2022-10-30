@@ -161,7 +161,6 @@ router.post("/login", async (req, res) => {
 
     if (p1 === userData.psw1) {
       res.status(200).render("profile", { name: userData.fname, image: userData.img });
-      res.status(200).render("profile", { name: reguser.fname, image: reguser.img });
 
     } else {
       res.status(400).send("invalid email or password!!");
