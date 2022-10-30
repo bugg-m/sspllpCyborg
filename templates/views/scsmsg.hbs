@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ====== Fontawesome CDN Link ====== -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <!-- ====== Fontawesome CDN Link ====== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <!-- ====== CSS ====== -->
-    <link rel="stylesheet" href="css/scsmsg.css">
+  <!-- ====== CSS ====== -->
+  <link rel="stylesheet" href="css/scsmsg.css">
 
-    <!--<title>Toast Notification with Progress Bar </title>-->
+  <title>Submittion - SriSriPort</title>
+  <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <div class="toast">
-        <div class="toast-content">
-            <i class="fas fa-solid fa-check check"></i>
+  <div class="toast">
+    <div class="toast-content">
+      <i class="fas fa-solid fa-check check"></i>
 
-            <div class="message">
-                <span class="text text-1">Success</span>
-                <span class="text text-2">Your Product data has been saved successfully and will be listed within 2 hrs</span>
-            </div>
-        </div>
-        <i class="fa-solid fa-xmark close"></i>
-
-        <div class="progress"></div>
+      <div class="message">
+        <span class="text text-1">Success</span>
+        <span class="text text-2">Your Product data has been saved successfully and will be listed within 2 hrs</span>
+      </div>
     </div>
+    <i class="fa-solid fa-xmark close"></i>
 
-    <button>Check Status</button>
-    <a href="/">Return Home</a>
-    <script>
-        const button = document.querySelector("button"),
+    <div class="progress"></div>
+  </div>
+
+  <button>Check Status</button>
+  <a href="/">Return Home</a>
+  <script>
+    const button = document.querySelector("button"),
       toast = document.querySelector(".toast")
-      closeIcon = document.querySelector(".close"),
+    closeIcon = document.querySelector(".close"),
       progress = document.querySelector(".progress");
 
-      let timer1, timer2;
+    let timer1, timer2;
 
-      button.addEventListener("click", () => {
-        toast.classList.add("active");
-        progress.classList.add("active");
+    button.addEventListener("click", () => {
+      toast.classList.add("active");
+      progress.classList.add("active");
 
-        timer1 = setTimeout(() => {
-            toast.classList.remove("active");
-        }, 5000); //1s = 1000 milliseconds
-
-        timer2 = setTimeout(() => {
-          progress.classList.remove("active");
-        }, 5300);
-      });
-      
-      closeIcon.addEventListener("click", () => {
+      timer1 = setTimeout(() => {
         toast.classList.remove("active");
-        
-        setTimeout(() => {
-          progress.classList.remove("active");
-        }, 300);
+      }, 5000); //1s = 1000 milliseconds
 
-        clearTimeout(timer1);
-        clearTimeout(timer2);
-      });
+      timer2 = setTimeout(() => {
+        progress.classList.remove("active");
+      }, 5300);
+    });
 
-    </script>
+    closeIcon.addEventListener("click", () => {
+      toast.classList.remove("active");
 
-    <!--<script src="script.js"></script>-->
+      setTimeout(() => {
+        progress.classList.remove("active");
+      }, 300);
+
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    });
+
+  </script>
+
+  <!--<script src="script.js"></script>-->
 </body>
+
 </html>

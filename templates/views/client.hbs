@@ -1,119 +1,173 @@
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Clients - SriSriPort</title>
-  <!-- Fontawesome CDN Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<title> Responsive Login and Signup Form </title>-->
+  <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="css/newnav.css">
   <link rel="stylesheet" type="text/css" href="css/reglog.css">
-  <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css">
-  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <title>Clients - SriSriPort</title>
+  <!-- Boxicons CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
   {{>navbar}}
-  <div class="container">
-    <input type="checkbox" id="flip">
-    <div class="cover">
-      <div class="front">
-        <img src="images/client.jpg" alt="">
-        <div class="text">
-          <span class="text-1">Welcome to SRISRIPORT <br> start your import-export journey</span>
-          <span class="text-2">dream big!! Take action!!</span>
-        </div>
-      </div>
-      <div class="back">
-        {{!-- <img class="backImg" src="images/client2.jpg" alt=""> --}}
-        {{!-- <img src="images/client.jpg" alt=""> --}}
-        <div class="text">
-          <span class="text-1">Complete miles of journey <br> with one step</span>
-          <span class="text-2">Let's get started</span>
-        </div>
-      </div>
-    </div>
-    <div class="forms">
+  <section class="container forms">
+    <div class="form login">
       <div class="form-content">
-        <div class="login-form">
-          <div class="title">Login to start your journey</div>
-          <form action="/clientlogin" method="post">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Enter your Email" name="email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter Password" name="psw1" required>
-              </div>
-              <div class="text"><a style="color: red;" href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
-            </div>
-          </form>
-        </div>
-        <div class="signup-form">
-          <div class="title">Signup</div>
-            <form action="/eximregister" method="post" enctype="multipart/form-data">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your first name" name="fname" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your last name" name="lname" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Enter your Email" name="email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter mobile number" name="mobile" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter Password" name="psw1" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Repeat Password" name="psw2" required>
-              </div>
-              {{!-- img start --}}
-              <div class="wrapper">
-                <div class="box">
-                  <div class="js--image-preview"></div>
-                  <div class="upload-options">
-                    <label>
-                      <input type="file" class="image-upload" name="avatar" accept="image/*" />
-                    </label>
-                  </div>
-                </div>
-              </div>
-              {{!-- img end --}}
+        <header>Login</header>
+        <form action="/clientlogin" method="post">
+          <div class="field input-field">
+            <input type="email" name="email" placeholder="Email" class="input">
+          </div>
 
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
-              </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-            </div>
-          </form>
+          <div class="field input-field">
+            <input name="psw1" type="password" placeholder="Password" class="password">
+            <i class='bx bx-hide eye-icon'></i>
+          </div>
 
+          <div class="form-link">
+            <a href="#" class="forgot-pass">Forgot password?</a>
+          </div>
+
+          <div class="field button-field">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+
+        <div class="form-link">
+          <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
         </div>
       </div>
+
+      <div class="line"></div>
+
+      <div class="media-options">
+        <a href="#" class="field facebook">
+          <i class='bx bxl-facebook facebook-icon'></i>
+          <span>Login with Facebook</span>
+        </a>
+      </div>
+
+      <div class="media-options">
+        <a href="#" class="field google">
+          <img src="images/google.png" alt="google" class="google-img">
+          <span>Login with Google</span>
+        </a>
+      </div>
+
     </div>
-  </div>
+
+    <!-- Signup Form -->
+
+    <div class="form signup">
+      <div class="form-content">
+        <header>Signup</header>
+        <form action="/eximregister" method="post" enctype="multipart/form-data">
+          <div class="field input-field">
+            <input type="text" name="fname" placeholder="Enter first name" class="input">
+          </div>
+          <div class="field input-field">
+            <input type="text" name="lname" placeholder="Enter last name" class="input">
+          </div>
+
+          <div class="field input-field">
+            <input name="email" type="email" placeholder="Email" class="input">
+          </div>
+          <div class="field input-field">
+            <input type="text" name="mobile" placeholder="Enter mobile number" class="input">
+          </div>
+
+          <div class="field input-field">
+            <input name="psw1" type="password" placeholder="Create password" class="password">
+          </div>
+
+          <div class="field input-field">
+            <input name="psw2" type="password" placeholder="Confirm password" class="password">
+            <i class='bx bx-hide eye-icon'></i>
+          </div>
+          {{!-- img start --}}
+          <div class="wrapper">
+            <div class="box">
+              <div class="js--image-preview"></div>
+              <div class="upload-options">
+                <label>
+                  <input type="file" class="image-upload" name="avatar" accept="image/*" />
+                </label>
+              </div>
+            </div>
+          </div>
+          {{!-- img end --}}
+          <div class="field button-field">
+            <button type="submit">Signup</button>
+          </div>
+        </form>
+
+        <div class="form-link">
+          <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="media-options">
+        <a href="#" class="field facebook">
+          <i class='bx bxl-facebook facebook-icon'></i>
+          <span>Login with Facebook</span>
+        </a>
+      </div>
+
+      <div class="media-options">
+        <a href="#" class="field google">
+          <img src="images/google.png" alt="google" class="google-img">
+          <span>Login with Google</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
   {{>foot1}}
+  <!-- JavaScript -->
   <script src="js/fileinput.js"></script>
+  <script>
+    const forms = document.querySelector(".forms"),
+      pwShowHide = document.querySelectorAll(".eye-icon"),
+      links = document.querySelectorAll(".link");
+
+    pwShowHide.forEach(eyeIcon => {
+      eyeIcon.addEventListener("click", () => {
+        let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+
+        pwFields.forEach(password => {
+          if (password.type === "password") {
+            password.type = "text";
+            eyeIcon.classList.replace("bx-hide", "bx-show");
+            return;
+          }
+          password.type = "password";
+          eyeIcon.classList.replace("bx-show", "bx-hide");
+        })
+
+      })
+    })
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault(); //preventing form submit
+        forms.classList.toggle("show-signup");
+      })
+    })
+
+  </script>
+
 </body>
 
 </html>
