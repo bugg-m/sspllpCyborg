@@ -78,9 +78,7 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
       });
       const data = await reguser.save();
 
-      res
-        .status(200)
-        .render("profile", { name: reguser.fname, image: reguser.img });
+      res.status(200).render("profile", { name: reguser.fname, image: reguser.img });
       // alert("you have successfully registered for srisriport!!  login to continue");
     } else {
       res.send("password mismatch");
@@ -152,22 +150,19 @@ router.post("/productlist", (req, res) => {
   res.redirect("/marketplace");
 });
 
-// router.get("/login", (req, res) => {
-//   res.render("profile");
-// });
+
 
 router.post("/login", async (req, res) => {
   try {
     const p1 = req.body.psw1;
     const email = req.body.email;
     const userData = await Register.findOne({ email: email });
-    // const userimgData = await Imgprofile.findOne({ email: email });
+
 
     if (p1 === userData.psw1) {
-      res
-        .status(200).render("profile", { name: userData.fname, image: userData.img });
-      // res.status(200).render("profile", { name: userData.fname, image: userimgData.img });
-      // res.send(userimgData.img);
+      res.status(200).render("profile", { name: userData.fname, image: userData.img });
+      res.status(200).render("profile", { name: reguser.fname, image: reguser.img });
+
     } else {
       res.status(400).send("invalid email or password!!");
     }
