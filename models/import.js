@@ -3,7 +3,7 @@ const validator = require("validator");
 
 const importSchema = new mongoose.Schema({
   email: {
-    email: String,
+    type: String,
   },
   importcat: {
     type: String,
