@@ -166,21 +166,23 @@
 
                         <div class="input-field mprice">
                             <label>Size/Dimensions</label>
-                            <input type="text" name="sizeAndDimensions" placeholder="Enter size or dimensions">
-                            <select class="opts" name="sizeUnit">
-                                <option value="">Choose</option>
-                                <option value="lbh in meter">lbh in meter</option>
-                                <option value="lbh in cm">lbh in cm</option>
-                                <option value="lbh in inches">lbh in inches</option>
-                                <option value="Weight(kg)">Weight(kg)</option>
-                                <option value="Weight(grams)">Weight(grams)</option>
-                                <option value="Weight(lbs)">Weight(lbs)</option>
-                                <option value="Small">Small</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Large">Large</option>
-                                <option value="Extra-Large">Extra-Large</option>
-                                <option value="Others">Others(specify)</option>
-                            </select>
+                            <div class="mprice">
+                                <input type="text" name="sizeAndDimensions" placeholder="Enter size or dimensions">
+                                <select class="opts" name="sizeUnit">
+                                    <option value="">Choose</option>
+                                    <option value="lbh in meter">lbh in meter</option>
+                                    <option value="lbh in cm">lbh in cm</option>
+                                    <option value="lbh in inches">lbh in inches</option>
+                                    <option value="Weight(kg)">Weight(kg)</option>
+                                    <option value="Weight(grams)">Weight(grams)</option>
+                                    <option value="Weight(lbs)">Weight(lbs)</option>
+                                    <option value="Small">Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Large">Large</option>
+                                    <option value="Extra-Large">Extra-Large</option>
+                                    <option value="Others">Others(specify)</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="input-field">
@@ -204,7 +206,26 @@
                         <div class="input-field">
                             <label>Type<span
                                     style="color: red !important; display: inline;  float: none;">*</span></label>
-                            <input type="text" name="type" placeholder="Enter type of the Product">
+                            <select name="type" class="selopt">
+                                <option value="" selected disabled>Choose</option>
+                                <option value="Auto Parts and Accessories">Auto Parts and Accessories</option>
+                                <option value="Electronic Components">Electronic Components</option>
+                                <option value="Consumer Electronics">Consumer Electronics</option>
+                                <option value="Fashion Accessories and Footwear">Fashion Accessories and Footwear
+                                </option>
+                                <option value="Fashion Apparel and Fabrics">Fashion Apparel and Fabrics</option>
+                                <option value="Gifts and Premiums">Gifts and Premiums</option>
+                                <option value="Food, Household and Pets">Food, Household and Pets</option>
+                                <option value="Home Appliances">Home Appliances</option>
+                                <option value="Health and Personal Care">Health and Personal Care</option>
+                                <option value="Furniture and Home Decoratives">Furniture and Home Decoratives</option>
+                                <option value="Hardware">Hardware</option>
+                                <option value="Machinery and Equipment">Machinery and Equipment</option>
+                                <option value="Mobile Electronics">Mobile Electronics</option>
+                                <option value="Sports and Outdoors">Sports and Outdoors</option>
+                                <option value="Smart Living Electronics">Smart Living Electronics</option>
+                                <option value="Scrap">Scrap</option>
+                            </select>
 
                         </div>
                         <div class="input-field">
