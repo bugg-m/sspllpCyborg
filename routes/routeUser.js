@@ -45,7 +45,7 @@ router.post("/importclient", async (req, res) => {
     const impdata = new Importuser(req.body);
     const data = await impdata.save();
 
-    res.status(200).render("marketplace");
+    res.status(200).render("mktplace");
     // alert("you have successfully registered for srisriport!!  login to continue");
   } catch (err) {
     res.status(401).send(err);
@@ -154,9 +154,6 @@ router.post("/contactus", async (req, res) => {
   } catch (err) {
     res.status(401).send(err);
   }
-});
-router.post("/productlist", (req, res) => {
-  res.redirect("/marketplace");
 });
 
 router.post("/login", async (req, res) => {

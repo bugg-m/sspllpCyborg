@@ -5,7 +5,7 @@ const auth=require("../middleware/auth");
 
 // Get request to go to home page
 routerWeb.get("/", (req, res) => {
-  res.render("index");
+  res.render("index",{username:req.fname});
 });
 // Get request to go to home page
 routerWeb.get("/productlist", auth , (req, res) => {
@@ -51,7 +51,7 @@ routerWeb.get("/logout", auth, async (req, res) => {
 
 
     res.clearCookie("jwt");
-    console.log("logout successful");
+    // console.log("logout successful");
     await req.user.save();
     res.render("reglog");
     

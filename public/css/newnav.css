@@ -65,6 +65,7 @@ nav .navbar .links li {
   justify-content: space-between;
   list-style: none;
   padding: 0 14px;
+  color: white;
 }
 
 nav .navbar .links li a {
