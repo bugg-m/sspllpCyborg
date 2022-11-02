@@ -10,7 +10,7 @@ const productlistSchema = new mongoose.Schema({
     type: String,
   },
   supplyAbility: {
-    type: Number,
+    type: String,
   },
   minPrice: {
     type: Number,

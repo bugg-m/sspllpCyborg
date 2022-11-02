@@ -1,5 +1,6 @@
 const express = require("express");
 const routerWeb = new express.Router();
+const cookieParser=require("cookie-parser");
 
 // Get request to go to home page
 routerWeb.get("/", (req, res) => {
@@ -34,6 +35,7 @@ routerWeb.get("/vision", (req, res) => {
   res.render("vision");
 });
 routerWeb.get("/contact", (req, res) => {
+  // console.log(`this is our ${req.cookies.jwt}`);
   res.render("contact");
 });
 routerWeb.get("/register", (req, res) => {

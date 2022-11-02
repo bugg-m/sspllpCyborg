@@ -6,6 +6,7 @@ const Eximreg = require("../models/eximreg");
 const Imgprofile = require("../models/profileimg");
 const Importuser = require("../models/import");
 const Productlist = require("../models/prolist");
+const bcrypt = require("bcrypt");
 
 // image uploader start -------
 var multer = require("multer");
@@ -73,9 +74,15 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
         email: req.body.email,
         mobile: req.body.mobile,
         psw1: req.body.psw1,
-        psw2: req.body.psw2,
         img: req.file.filename,
       });
+      const token=await reguser.genAuthToken();
+      res.cookie("jwt",token, {
+        expires:new Date(Date.now()+3000000),
+        httpOnly:true,
+        // secure:true
+      });
+      
       const data = await reguser.save();
 
       res.status(200).render("profile", { name: reguser.fname, image: reguser.img });
@@ -101,6 +108,7 @@ router.post("/eximregister", upload.single("avatar"), async (req, res) => {
         psw2: req.body.psw2,
         img: req.file.filename,
       });
+      
       const data = await reguser.save();
 
       res.status(200).render("exim");
@@ -151,18 +159,26 @@ router.post("/productlist", (req, res) => {
   res.redirect("/marketplace");
 });
 
-
-
 router.post("/login", async (req, res) => {
   try {
     const p1 = req.body.psw1;
     const email = req.body.email;
     const userData = await Register.findOne({ email: email });
 
+    
+    const ismatch = await bcrypt.compare(p1, userData.psw1);
 
-    if (p1 === userData.psw1) {
-      res.status(200).render("profile", { name: userData.fname, image: userData.img });
-
+    const token=await userData.genAuthToken();
+    res.cookie("jwt",token, {
+      expires:new Date(Date.now()+300000000),
+      httpOnly:true,
+      // secure:true
+    });
+    
+    if (ismatch) {
+      res
+        .status(200)
+        .render("profile", { name: userData.fname, image: userData.img });
     } else {
       res.status(400).send("invalid email or password!!");
     }
