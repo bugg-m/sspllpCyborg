@@ -4,7 +4,7 @@ const validator = require("validator");
 const productlistSchema = new mongoose.Schema({
   email:
   {
-    type:String
+    type: String
   },
   productName: {
     type: String,
@@ -29,6 +29,9 @@ const productlistSchema = new mongoose.Schema({
     type: String,
   },
   paymentTerms: {
+    type: String,
+  },
+  paymentTermsManually: {
     type: String,
   },
   processingTime: {
@@ -56,13 +59,10 @@ const productlistSchema = new mongoose.Schema({
     type: String,
   },
 
-  sizeAndDimensions: {
+  sizeUnit: {
     type: String,
   },
 
-  email: {
-    type: String,
-  },
   material: {
     type: String,
   },
@@ -87,12 +87,6 @@ const productlistSchema = new mongoose.Schema({
   packaging: {
     type: String,
   },
-  priceCurrency: {
-    type: String,
-  },
-  sizeUnit: {
-    type: String,
-  },
   imgs: [String],
   date: {
     type: Date,
@@ -100,8 +94,8 @@ const productlistSchema = new mongoose.Schema({
   },
   verified:
   {
-    type:Boolean,
-    default:false
+    type: Boolean,
+    default: false
   }
 });
 const Productlist = new mongoose.model("Productlist", productlistSchema);

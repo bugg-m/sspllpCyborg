@@ -93,38 +93,7 @@ const eximregSchema = new mongoose.Schema({
     {
         type: String,
     },
-    gstNumber:
-    {
-        type: String,
-    },
-    iecCode:
-    {
-        type: String,
-    },
-    currentAccount:
-    {
-        type: String,
-    },
-    aoCode:
-    {
-        type: String,
-    },
-    letsTalk:
-    {
-        type: String,
-    },
-    ifYes:
-    {
-        type: String,
-    },
-    alternateMobileNumber:
-    {
-        type: String,
-    },
-    noIdont:
-    {
-        type: String,
-    },
+
     date:
     {
         type: Date,
