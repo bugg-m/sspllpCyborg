@@ -5,16 +5,19 @@ const importSchema = new mongoose.Schema({
   email: {
     type: String,
   },
-  importcat: {
+  importCategory: {
     type: String,
   },
-  importreg: {
+  importRegion: {
     type: String,
   },
-  howmuch: {
+  importRegionManual: {
+    type: String,
+  },
+  quantity: {
     type: Number,
   },
-  impunit: {
+  quantityUnit: {
     type: String,
   },
 

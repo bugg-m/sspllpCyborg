@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listing</title>
-    <link rel="stylesheet" href="css/test.css">
+    <title>Product List - SriSriPort</title>
+    <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <body>
@@ -15,7 +18,8 @@
         <div class="main-container">
             <div class="form-card">
                 <div class="f-card">
-                    <div class="left-side-bar">
+                    <div id="productform" class="left-side-bar">
+                        <h2>Product Listing</h2>
                         <ul class="progress-bar">
                             <li class="active">Product Information</li>
                             <li class="active">Product Description</li>
@@ -246,7 +250,7 @@
 
                                 <div class="text">
                                     <h2>Upload Images</h2>
-                                    <p>Select minimum3 images</p>
+                                    <p>Select minimum 3 Images</p>
                                 </div>
 
                                 <div class="wrapper">
@@ -260,7 +264,7 @@
                                     </div>
                                 </div>
                                 <div class="but-sub">
-                                    <button class="submit-button">Submit</button>
+                                    <button id="productbtn" class="submit-button">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -269,6 +273,7 @@
             </div>
         </div>
     </section>
+    {{>foot1}}
 </body>
 
 <script src="js/fileinput.js"></script>

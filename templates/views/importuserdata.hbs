@@ -1,66 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- importuserdata -->
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/importuserdata.css">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Roboto&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <title>Import - SriSriPort</title>
     <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <body>
     {{>navbar}}
-    <form class="form" action="/importclient" method="post" id="login">
-        <h1 class="form__heading">Welcome</h1>
-        <div class="form__group">
-            <input type="email" name="email" class="form__input" placeholder="confirm your mail" required>
-            <label class="form__label">enter your mail</label>
-        </div>
-        <div class="form__group">
-            <input type="text" name="importcat" class="form__input" placeholder="What do you want to Import" required>
-            <label class="form__label">What do you want to Import</label>
-        </div>
-        <div class="form__group" id="unit__group">
-            <!-- <input type="text" name="" class="form__input" placeholder="From where do you want to Import"> -->
-            <label id="unit__label">From where do you want to Import</label>
-            <select name="importreg" class="unit__input" required>
-                <option value="" disabled selected>Choose region</option>
-                <option value="Asia Pacific">Asia Pacific</option>
-                <option value="Africa">Africa</option>
-                <option value="Caribbean">Caribbean</option>
-                <option value="North America">North America</option>
-                <option value="South America">South America</option>
-                <option value="Central America">Central America</option>
-                <option value="Eastern Europe">Eastern Europe</option>
-                <option value="Europian Union">Europian Union</option>
-                <option value="Middle East">Middle East</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </div>
-        <div class="form__group" id="unit__group">
-            <input type="number" name="howmuch" class="form__input" placeholder="How much do you want to Import"
-                required>
-            <label class="form__label">How much do you want to Import</label>
-            <select name="impunit" class="unit__input" required>
-                <option value="" disabled selected>Choose type</option>
-                <option value="cbm">CBM</option>
-                <option value="Container">Container</option>
-                <option value="Unit">Unit</option>
-            </select>
-        </div>
-        <button class="btn btn--large btn--green" form_id="login" type="submit">
-            Next
-            <ion-icon class="btn__icon" name="arrow-forward-outline"></ion-icon>
-        </button>
+    <section>
+        <div class="main-container">
+            <div class="form-card">
+                <div class="f-card">
+                    <div class="left-side-bar" id="importForm">
+                        <h2>Welcome to SriSriPort</h2>
 
-    </form>
-    {{!-- {{>foot1}} --}}
+                    </div>
+                    <div class="right-side-bar">
+                        <form action="/importclient" method="post">
+                            <div class="main">
+
+                                <div class="text">
+                                    <h2>Welcome to SriSriPort</h2>
+                                    <p>Before moving next answer these Questions</p>
+                                </div>
+                                <div class="fields">
+                                    <div class="form-group">
+                                        <label>Enter your mail</label>
+                                        <input type="email" name="email" placeholder="Confirm your mail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>What do you want to Import</label>
+                                        <input type="text" name="importCategory" placeholder="Enter product name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="fields">
+                                    <div class="form-group">
+                                        <label>From where do you want to Import</label>
+                                        <div class="mprice">
+                                            <input type="text" name="importRegionManual"
+                                                placeholder="Enter Manually or">
+                                            <select name="importRegion" class="unit__input" required>
+                                                <option value="" disabled selected>Choose region</option>
+                                                <option value="Asia Pacific">Asia Pacific</option>
+                                                <option value="Africa">Africa</option>
+                                                <option value="Caribbean">Caribbean</option>
+                                                <option value="North America">North America</option>
+                                                <option value="South America">South America</option>
+                                                <option value="Central America">Central America</option>
+                                                <option value="Eastern Europe">Eastern Europe</option>
+                                                <option value="Europian Union">Europian Union</option>
+                                                <option value="Middle East">Middle East</option>
+                                                <option value="Oceania">Oceania</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>How much do you want to Import</label>
+                                        <div class="mprice">
+                                            <input type="number" name="quantity" placeholder="Enter Quantity" required>
+                                            <select name="quantityUnit">
+                                                <option value="" disabled selected>Choose type</option>
+                                                <option value="cbm">CBM</option>
+                                                <option value="Container">Container</option>
+                                                <option value="Unit">Unit</option>
+                                                <option value="other">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="but-sub">
+                                    <button id="importbtn" class="submit-button">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{>foot1}}
 </body>
 
 </html>
