@@ -295,13 +295,22 @@ select {
 #exptbtn {
     background-color: #7d27bb;
 }
+#exptbtn:hover{
+    background-color: rgb(102, 6, 137);
+}
 
 #importbtn {
     background-color: #0075ff;
 }
+#importbtn:hover {
+    background-color: blue;
+}
 
 #productbtn {
     background-color: #04b11e;
+}
+#productbtn:hover {
+    background-color: green;
 }
 
 .submit-button {
