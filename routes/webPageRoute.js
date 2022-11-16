@@ -11,7 +11,7 @@ const auth=require("../middleware/auth");
 routerWeb.get("/productlist", auth , (req, res) => {
   res.render("productlistform");
 });
-routerWeb.get("/", auth , (req, res) => {
+routerWeb.get("/", (req, res) => {
   res.render("index");
 });
 routerWeb.get("/login", auth , (req, res) => {
