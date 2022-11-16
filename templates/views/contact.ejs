@@ -13,14 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/b7063610fd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    {{!--
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="css/phone.css"> --}}
+   
 
 
 </head>
 
 <body>
-    {{>navbar}}
+    <%- include('../partials/navbar'); -%>
     <div class="container">
         <div class="content">
             <div class="left-side">
@@ -66,7 +65,7 @@
         </div>
     </div>
 
-    {{!-- accordian --}}
+ 
     <div class="accordion">
         <div class="accordion-content">
             <header>
@@ -326,9 +325,7 @@
 
 
 
-    {{!-- accordian --}}
 
-    {{>foot1}}
 
     <script>
         const accordionContent = document.querySelectorAll(".accordion-content");

@@ -4,13 +4,22 @@ const cookieParser=require("cookie-parser");
 const auth=require("../middleware/auth");
 
 // Get request to go to home page
-routerWeb.get("/", (req, res) => {
-  res.render("index",{username:req.fname});
-});
+// routerWeb.get("/", (req, res) => {
+//   res.render("index",{username:req.fname});
+// });
 // Get request to go to home page
 routerWeb.get("/productlist", auth , (req, res) => {
   res.render("productlistform");
 });
+routerWeb.get("/", auth , (req, res) => {
+  res.render("index");
+});
+routerWeb.get("/login", auth , (req, res) => {
+  res.render("login");
+});
+
+
+
 
 
 // Get request for dev test
@@ -33,7 +42,7 @@ routerWeb.get("/import",auth, (req, res) => {
 });
 
 routerWeb.get("/mktplace", (req, res) => {
-  res.render("mktplace");
+  res.render("product");
 });
 routerWeb.get("/logout", auth, async (req, res) => {
   try {

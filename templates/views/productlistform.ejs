@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    {{>navbar}}
+    <%- include('../partials/navbar'); -%>
     <section>
         <div class="main-container">
             <div class="form-card">
@@ -62,7 +62,7 @@
                                         <div class="mprice">
                                             <input type="number" name="minPrice" placeholder="Enter minimum price"
                                                 required>
-                                            {{>currency}}
+                                                <%- include('../partials/currency'); -%>
                                         </div>
                                     </div>
 
@@ -273,7 +273,7 @@
             </div>
         </div>
     </section>
-    {{>foot1}}
+
 </body>
 
 <script src="js/fileinput.js"></script>

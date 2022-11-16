@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    {{>navbar}}
+    <%- include('../partials/navbar'); -%>
     <section>
         <div class="main-container">
             <div class="form-card">
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="fields">
                                     <div class="form-group">
-                                        {{>country}}
+                                        <%- include('../partials/country'); -%>
                                     </div>
                                     <div class="form-group">
                                         <label>Trade Role</label>
@@ -162,7 +162,7 @@
             </div>
         </div>
     </section>
-    {{>foot1}}
+    <%- include('../partials/foot1'); -%>
 </body>
 
 </html>

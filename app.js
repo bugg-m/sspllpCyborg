@@ -5,6 +5,7 @@ require("./db/db");
 const path = require("path");
 const app = express();
 const hbs = require("hbs");
+const ejs = require("ejs");
 const cookieParser=require("cookie-parser");
 const port = process.env.PORT || 3000;
 
@@ -22,7 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(staticPath));
-app.set("view engine", "hbs");
+// app.set("view engine", "hbs");
+app.set("view engine", "ejs");
 app.set("views", tempPath);
 hbs.registerPartials(partPath);
 

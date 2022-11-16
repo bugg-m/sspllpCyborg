@@ -70,11 +70,11 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
     if (p1 === p2) {
       const reguser = new Register({
         fname: req.body.fname,
-        lname: req.body.lname,
+        // lname: req.body.lname,
         email: req.body.email,
         mobile: req.body.mobile,
         psw1: req.body.psw1,
-        img: req.file.filename,
+        // img: req.file.filename,
       });
       const token=await reguser.genAuthToken();
       res.cookie("jwt",token, {
@@ -301,6 +301,61 @@ router.post("/getimg", async (req, res) => {
     });
   } catch (err) {
     res.status(401).send(err);
+  }
+});
+
+router.get("/mktplace", (req, res) => {
+  var udata = Productlist.find({});
+  udata.exec(function (err, data) {
+    if (err) throw err;
+    // res.render("test");
+    res.render("product", { records: data });
+  });
+});
+// router.get("/", (req, res) => {
+//   var udata = Productlist.find({});
+//   udata.exec(function (err, data) {
+//     if (err) throw err;
+//     // res.render("test");
+//     res.render("product", { records: data });
+//   });
+// });
+
+router.get("/listpage", (req, res) => {
+  var udata = Register.find({}).sort({"fname":1});
+  udata.exec(function (err, data) {
+    if (err) throw err;
+    // res.render("test");
+    res.render("fetchusers", { records: data });
+  });
+});
+
+router.get("/sbn", async (req, res) => {
+  var udata = await Register.find({}).sort({"fname":1});
+  // res.send(udata);
+  res.render("fetchusers", { records: udata });
+});
+router.get("/sbd", async (req, res) => {
+  var udata = await Register.find({}).sort({"date":1});
+  // res.send(udata);
+  res.render("fetchusers", { records: udata });
+});
+// router.get("/delete/:id", function (req, res) {
+//   var del=Register.findByIdandRemove(req.params.id);
+//   console.log(req.params.id);
+//  del.exec(function (err) {
+//     if (err) throw err;
+//     // res.render("test");
+//     res.redirect("/");
+//   });
+// });
+router.get("/delete/:id", async (req, res) => {
+  try {
+    var id=req.params.id.slice(1);
+    var del = await Register.deleteOne({_id:id});
+   res.redirect("/fetchusers");
+  } catch (error) {
+    res.send("some error occured");
   }
 });
 
