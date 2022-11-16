@@ -1,226 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/reglog.css">
-  <link rel="stylesheet" href="css/footer.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <title>Sign in & Sign up Form</title>
-  </head>
-  <body>
-   
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="/login" method="post" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input name="email" type="email" placeholder="Email" required />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input
-                name="psw1"
-                type="password"
-                placeholder="Password"
-                required
-              />
-              <!-- <i class='bx bx-hide eye-icon'></i> -->
-            </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <!-- <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div> -->
-          </form>
-          <form id="regform"
-            action="/register"
-            method="post"
-            enctype="multipart/form-data"
-            class="sign-up-form"
-          >
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input
-                type="text"
-                name="fname"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
-            <!-- <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input
-                type="text"
-                name="lname"
-                placeholder="Enter last name"
-                required
-              />
-            </div> -->
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter email"
-                required
-              />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-phone"></i>
-              <input
-                type="text"
-                name="mobile"
-                placeholder="Enter mobile number"
-                required
-              />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input
-                name="psw1"
-                type="password"
-                placeholder="Create password"
-                required
-              />
-              <!-- <i class='bx bx-hide eye-icon'></i> -->
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input
-                name="psw2"
-                type="password"
-                placeholder="Confirm password"
-                required
-              />
-              <!-- <i class='bx bx-hide eye-icon'></i> -->
-            </div>
-            <!-- <div class="input-field"> -->
-            <!-- <div class="wrapper">
-              <div class="box">
-                <div class="js--image-preview"></div>
-                <div class="upload-options">
-                  <label>
-                    <input type="file" class="image-upload" name="avatar"
-                    accept="image/*" / required>
-                  </label>
-                </div>
-              </div>
-            </div> -->
-            <!-- </div> -->
-            <input type="submit" class="btn" value="Sign up" />
-            <!-- <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div> -->
-          </form>
-        </div>
-      </div>
 
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>New here ?</h3>
-            <p>
-              Grow your business globally
-              with easy e-commerce exports
-            </p>
-            <button class="btn transparent" id="sign-up-btn">Sign up</button>
-          </div>
-          <img src="img/log.svg" class="image" alt="" />
-        </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>One of us ?</h3>
-            <p>
-              Grow your business globally
-              with easy e-commerce exports
-            </p>
-            <button class="btn transparent" id="sign-in-btn">Sign in</button>
-          </div>
-          <img src="img/register.svg" class="image" alt="" />
-        </div>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/flogo.png" type="image/x-icon">
+  <title>Srisriport-SignUp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/common.css">
+
+</head>
+<%- include('../partials/navbar'); -%>
+
+<div class="container my-5">
+  <form class="cform" action="/register" method="post" enctype="multipart/form-data" px-2 py-2>
+    <img class="my-4" src="images/flogo.png" alt="" width="72" height="65">
+    <h1 class="h3 mb-3 fw-normal">Srisriport sign up</h1>
+
+    <div class="form-floating my-2 mx-2">
+      <input name="fname" type="text" class="form-control" id="floatingInput" placeholder="Enter your full Name">
+      <label for="floatingInput">Full Name</label>
     </div>
-    <%- include('../partials/foot1'); -%>
-    <script>
-      const sign_in_btn = document.querySelector("#sign-in-btn");
-      const sign_up_btn = document.querySelector("#sign-up-btn");
-      const container = document.querySelector(".container");
+    <div class="form-floating my-2 mx-2">
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating my-2 mx-2">
+      <input name="mobile" type="text" class="form-control" id="floatingInput" placeholder="+91">
+      <label for="floatingInput">Phone Number</label>
+    </div>
+    <div class="form-floating my-2 mx-2">
+      <input name="psw1" type="password" class="form-control" id="floatingPassword" placeholder="Enter Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating my-2 mx-2">
+      <input name="psw2" type="password" class="form-control" id="floatingPassword" placeholder="confirm Password">
+      <label for="floatingPassword">Confirm Password</label>
+    </div>
 
-      sign_up_btn.addEventListener("click", () => {
-        container.classList.add("sign-up-mode");
-      });
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+  </form>
 
-      sign_in_btn.addEventListener("click", () => {
-        container.classList.remove("sign-up-mode");
-      });
-    </script>
-    <script src="js/fileinput.js"></script>
-    <script>
-      const forms = document.querySelector(".forms"),
-        pwShowHide = document.querySelectorAll(".eye-icon"),
-        links = document.querySelectorAll(".link");
+</div>
+<%- include('../partials/foot1'); -%>
 
-      pwShowHide.forEach((eyeIcon) => {
-        eyeIcon.addEventListener("click", () => {
-          let pwFields =
-            eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
 
-          pwFields.forEach((password) => {
-            if (password.type === "password") {
-              password.type = "text";
-              eyeIcon.classList.replace("bx-hide", "bx-show");
-              return;
-            }
-            password.type = "password";
-            eyeIcon.classList.replace("bx-show", "bx-hide");
-          });
-        });
-      });
-
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault(); //preventing form submit
-          forms.classList.toggle("show-signup");
-        });
-      });
-    </script>
-  </body>
 </html>

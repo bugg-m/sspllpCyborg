@@ -14,7 +14,7 @@ routerWeb.get("/productlist", auth , (req, res) => {
 routerWeb.get("/", (req, res) => {
   res.render("index");
 });
-routerWeb.get("/login", auth , (req, res) => {
+routerWeb.get("/login", (req, res) => {
   res.render("login");
 });
 
@@ -26,9 +26,7 @@ routerWeb.get("/login", auth , (req, res) => {
 routerWeb.get("/test", auth, (req, res) => {
   res.render("test");
 });
-routerWeb.get("/importlogin", (req, res) => {
-  res.render("importlogin");
-});
+
 
 routerWeb.get("/profile", (req, res) => {
   res.render("profile");
@@ -62,7 +60,7 @@ routerWeb.get("/logout", auth, async (req, res) => {
     res.clearCookie("jwt");
     // console.log("logout successful");
     await req.user.save();
-    res.render("reglog");
+    res.render("login");
     
   } catch (error) {
     res.status(500).send(error);

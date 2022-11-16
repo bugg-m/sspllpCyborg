@@ -94,58 +94,9 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
     res.status(401).send(err);
   }
 });
-router.post("/eximregister", upload.single("avatar"), async (req, res) => {
-  try {
-    const p1 = req.body.psw1;
-    const p2 = req.body.psw2;
-    if (p1 === p2) {
-      const reguser = new Register({
-        fname: req.body.fname,
-        lname: req.body.lname,
-        email: req.body.email,
-        mobile: req.body.mobile,
-        psw1: req.body.psw1,
-        psw2: req.body.psw2,
-        img: req.file.filename,
-      });
-      
-      const data = await reguser.save();
 
-      res.status(200).render("exim");
-      // alert("you have successfully registered for srisriport!!  login to continue");
-    } else {
-      res.send("password mismatch");
-    }
-  } catch (err) {
-    res.status(401).send(err);
-  }
-});
 
-router.post("/impregister", upload.single("avatar"), async (req, res) => {
-  try {
-    const p1 = req.body.psw1;
-    const p2 = req.body.psw2;
-    if (p1 === p2) {
-      const reguser = new Register({
-        fname: req.body.fname,
-        lname: req.body.lname,
-        email: req.body.email,
-        mobile: req.body.mobile,
-        psw1: req.body.psw1,
-        psw2: req.body.psw2,
-        img: req.file.filename,
-      });
-      const data = await reguser.save();
 
-      res.status(200).render("importuserdata");
-      // alert("you have successfully registered for srisriport!!  login to continue");
-    } else {
-      res.send("password mismatch");
-    }
-  } catch (err) {
-    res.status(401).send(err);
-  }
-});
 router.post("/contactus", async (req, res) => {
   try {
     const queryofuser = new Qeries(req.body);
@@ -184,35 +135,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/clientlogin", async (req, res) => {
-  try {
-    const p1 = req.body.psw1;
-    const email = req.body.email;
-    const userData = await Register.findOne({ email: email });
-    if (p1 === userData.psw1) {
-      res.status(200).render("exim");
-    } else {
-      res.status(400).send("invalid email or password!!");
-    }
-  } catch (err) {
-    res.status(401).send(err);
-  }
-});
 
-router.post("/importlogin", async (req, res) => {
-  try {
-    const p1 = req.body.psw1;
-    const email = req.body.email;
-    const userData = await Register.findOne({ email: email });
-    if (p1 === userData.psw1) {
-      res.status(200).render("importuserdata");
-    } else {
-      res.status(400).send("invalid email or password!!");
-    }
-  } catch (err) {
-    res.status(401).send(err);
-  }
-});
+
+
 
 router.post("/upload", upload.single("avatar"), async (req, res) => {
   try {
