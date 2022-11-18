@@ -12,6 +12,10 @@
     border-radius: 10px;
     
 }
+#logform
+{
+    border-top: 6px solid navy;  
+}
 @media screen and (max-width:700px){
     .container
 {

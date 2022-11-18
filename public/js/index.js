@@ -1,15 +1,22 @@
-const cookieBox = document.querySelector(".wrapper"),
-      acceptBtn = cookieBox.querySelector("button");
+const counters = document.querySelectorAll('.value');
+const speed = 100;
 
-acceptBtn.onclick = ()=>{
-  //setting cookie for 1 month, after one month it'll be expired automatically
-  document.cookie = "CookieBy=srisriport; max-age="+60*60*24*30;
-  if(document.cookie){ //if cookie is set
-    cookieBox.classList.add("hide"); //hide cookie box
-  }else{ //if cookie not set then alert an error
-    alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
-  }
-}
-let checkCookie = document.cookie.indexOf("CookieBy=srisriport"); //checking our cookie
-//if cookie is set then hide the cookie box else show it
-checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+counters.forEach( counter => {
+   const animate = () => {
+      const value = +counter.getAttribute('target');
+      const data = +counter.innerText;
+     
+      const time = value / speed;
+     if(data < value) {
+          counter.innerText = Math.ceil(data + time);
+          setTimeout(animate, 2);
+        }else{
+          counter.innerText = value;
+        }
+     
+   }
+   
+   animate();
+});
+
+
