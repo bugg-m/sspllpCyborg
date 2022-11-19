@@ -85,8 +85,8 @@ router.post("/register", upload.single("avatar"), async (req, res) => {
       
       const data = await reguser.save();
 
-      res.status(200).render("profile", { name: reguser.fname, image: reguser.img });
-      // alert("you have successfully registered for srisriport!!  login to continue");
+      res.status(200).render("index", { name: reguser.fname,flag:"block"});
+      
     } else {
       res.send("password mismatch");
     }

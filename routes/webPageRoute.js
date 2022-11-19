@@ -12,7 +12,7 @@ routerWeb.get("/productlist", auth , (req, res) => {
   res.render("productlistform");
 });
 routerWeb.get("/", (req, res) => {
-  res.render("index");
+  res.render("index",{flag:"none",name:"user"});
 });
 routerWeb.get("/login", (req, res) => {
   res.render("login");
