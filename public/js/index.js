@@ -20,3 +20,11 @@ counters.forEach( counter => {
 });
 
 
+var typed=new Typed(".auto-type",{
+  strings: ["#Import", "#Export"],
+  typeSpeed:100,
+  backSpeed:100,
+  loop:true
+});
+
+
