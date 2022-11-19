@@ -27,4 +27,11 @@ var typed=new Typed(".auto-type",{
   loop:true
 });
 
+const pop=setTimeout(()=>
+{
+  $('#signup').click();
+
+},5000);
+pop();
+
 
